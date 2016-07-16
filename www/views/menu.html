@@ -18,17 +18,32 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
-          Login
-        </ion-item>
         <ion-item menu-close href="#/app/search">
           Search
         </ion-item>
-        <ion-item menu-close href="#/app/browse">
-          Browse
+        <ion-item menu-close href="#/app/myprofile">
+          My Profile
+        </ion-item>
+        <ion-item menu-close href="#/app/mycourses">
+          My Courses
+        </ion-item>
+        <ion-item menu-close href="#/app/myfavourites">
+          My Favourites
+        </ion-item>
+        <ion-item menu-close href="#/app/settings">
+          Settings
         </ion-item>
         <ion-item menu-close href="#/app/playlists">
           Playlists
+        </ion-item>
+        <!-- delete later. use ng-click="login()" in separate login view later -->
+        <ion-item menu-close ng-click="login()">
+          Login
+        </ion-item>
+        <!-- will delete later when search.html done and can reference it there.
+             for now, adding it here so we can still get to this page -->
+        <ion-item menu-close href="#/app/results">
+          Results
         </ion-item>
       </ion-list>
     </ion-content>

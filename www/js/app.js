@@ -31,33 +31,33 @@ angular.module('starter', ['ionic']) // remove starter.controllers?
     templateUrl: 'views/menu.html',
     controller: 'MenuCtrl'
   })
-  .state('app.search', {
-    url: '/search',
+  .state('app.mycourses', {
+    url: '/mycourses',
     views: {
       'menuContent': {
-        templateUrl: 'views/results.html',
-        controller: 'ResultsCtrl'
+        templateUrl: 'views/mycourses.html',
+        controller: 'MyCoursesCtrl'
       }
     }
   })
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'views/browse.html'
-          // doesn't have a controller
-        }
+  .state('app.myfavourites', {
+    url: '/myfavourites',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/myfavourites.html',
+        controller: 'MyFavouritesCtrl'
       }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'views/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
+    }
+  })
+  .state('app.myprofile', {
+    url: '/myprofile',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/myprofile.html',
+        controller: 'MyProfileCtrl'
       }
-    })
+    }
+  })
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {
@@ -66,7 +66,43 @@ angular.module('starter', ['ionic']) // remove starter.controllers?
         controller: 'PlaylistCtrl'
       }
     }
+  })
+  .state('app.playlists', {
+    url: '/playlists',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/playlists.html',
+        controller: 'PlaylistsCtrl'
+      }
+    }
+  })
+  .state('app.results', {
+    url: '/results',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/results.html',
+        controller: 'ResultsCtrl'
+      }
+    }
+  })
+  .state('app.search', {
+    url: '/search',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl'
+      }
+    }
+  })
+  .state('app.settings', {
+    url: '/settings',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/settings.html',
+        controller: 'SettingsCtrl'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/search');
+  $urlRouterProvider.otherwise('/app/results');
 });

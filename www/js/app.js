@@ -35,8 +35,8 @@ angular.module('starter', ['ionic']) // remove starter.controllers?
     url: '/search',
     views: {
       'menuContent': {
-        templateUrl: 'views/search.html',
-        controller: 'SearchCtrl'
+        templateUrl: 'views/results.html',
+        controller: 'ResultsCtrl'
       }
     }
   })

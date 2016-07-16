@@ -1,5 +1,5 @@
 angular.module('starter')
-.controller('SearchCtrl', function($scope) {
+.controller('ResultsCtrl', function($scope) {
     $scope.add = add;
     $scope.courses = [
         {

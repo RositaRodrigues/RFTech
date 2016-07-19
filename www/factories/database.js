@@ -5,32 +5,38 @@ angular.module('starter')
     {
       title: "Multivariable Calculus",
       code: "M2AA2",
-      year: "2015-16"
+      year: "2015-16",
+      uniCode: "198"
     },
     {
       title: "Compilers",
       code: "CO221",
-      year: "2014-15"
+      year: "2014-15",
+      uniCode: "198"
     },
     {
       title: "Software Engineering Design",
       code: "CO220",
-      year: "2015-16"
+      year: "2015-16",
+      uniCode: "198"
     },
     {
       title: "Introduction to Artificial Intelligence",
       code: "CO231",
-      year: "2014-15"
+      year: "2014-15",
+      uniCode: "198"
     },
     {
       title: "Statistics",
       code: "MJS2",
-      year: "2014-15"
+      year: "2014-15",
+      uniCode: "198"
     },
     {
       title: "Operating Systems",
       code: "CO211",
-      year: "2014-15"
+      year: "2014-15",
+      uniCode: "198"
       /*
       // Probably best to have separate tables/databases for each of these
       // data structures (reviews, discussions, followUps) and use unique ids

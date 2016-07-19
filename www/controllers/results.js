@@ -4,7 +4,7 @@ angular.module('starter')
     $scope.courses = Database.getCourses();
 
     ////////
-    function add() {
+    function add(course) {
         window.alert("Added!");
     }
 });

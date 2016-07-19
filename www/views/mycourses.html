@@ -1,5 +1,22 @@
 <ion-view view-title="My Courses">
   <ion-content>
-    <h1>My Courses</h1>
+    <div class="row header">
+      <div class="col col-10">Remove from My Courses</div>
+      <div class="col col-20">Course Code</div>
+      <div class="col col-50">Course Title</div>
+      <div class="col col-20">Academic Year</div>
+    </div>
+
+    <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox">
+      <a href="#/app/{{course.code}}">
+        <div class="flex-container row wrap">
+          <div class="col col-10"><button class="button" ng-click="remove(course)"><i class="icon ion-star"></i></button></div>
+          <div class="col col-20">{{course.code}}</div>
+          <div class="col col-50">{{course.title}}</div>
+          <div class="col col-20">{{course.year}}</div>
+        </div>
+      </a>
+      <i class="icon ion-chevron-right icon-accessory"></i>
+    </div>
   </ion-content>
 </ion-view>

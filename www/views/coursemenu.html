@@ -1,16 +1,16 @@
-<ion-view view-title="M2AA2 Multivariable Calculus 2015-16">
+<ion-view view-title="{{courseCode}} {{courseTitle}} {{academicYear}}">
   <ion-content>
     <ion-list>
-      <ion-item menu-close href="#/app/">
+      <ion-item menu-close href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/discussions">
         Discussions
       </ion-item>
-      <ion-item menu-close href="#/app/">
+      <ion-item menu-close href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/resources">
         Resources
       </ion-item>
-      <ion-item menu-close href="#/app/">
+      <ion-item menu-close href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/information">
         Information
       </ion-item>
-      <ion-item menu-close href="#/app/">
+      <ion-item menu-close href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/reviews">
         Reviews
       </ion-item>
   </ion-content>

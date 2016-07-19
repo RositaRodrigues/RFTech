@@ -31,6 +31,24 @@ angular.module('starter', ['ionic']) // remove starter.controllers?
     templateUrl: 'views/menu.html',
     controller: 'MenuCtrl'
   })
+  .state('app.coursemenu', {
+    url: '/course=:coursecode&title=:coursetitle&year=:academicyear/coursemenu',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/coursemenu.html',
+        controller: 'CourseMenuCtrl'
+      }
+    }
+  })
+  .state('app.discussions', {
+    url: '/course=:coursecode&title=:coursetitle&year=:academicyear/discussions',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/discussions.html',
+        controller: 'DiscussionsCtrl'
+      }
+    }
+  })
   .state('app.mycourses', {
     url: '/mycourses',
     views: {

@@ -56,3 +56,23 @@ a:link, a:visited, a:hover, a:active  {
   background-color:transparent;
   text-decoration:none
 }
+
+#title {
+  float: left;
+}
+
+#posts {
+  float: right;
+}
+
+#author {
+  float: left;
+}
+
+#date {
+  float: right;
+}
+
+#discussion {
+  overflow: auto;
+}

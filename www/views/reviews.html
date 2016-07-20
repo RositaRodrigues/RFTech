@@ -1,6 +1,7 @@
 <ion-view view-title="{{courseCode}} {{courseTitle}} {{academicYear}}">
   <ion-content>
-    <ion-list class="item low-pad-item item-icon-right" ng-repeat="review in reviews | filter:searchBox">
+    <h4 class="subtitle">Reviews</h4>
+    <ion-list class="item low-pad-item" ng-repeat="review in reviews | filter:searchBox">
       <div class="flex-container row wrap">
         <h2 class="col col-80">{{review.title}}
           <p>
@@ -17,7 +18,7 @@
       </div>
       <div class="flex-container row wrap">
         <h3 class="col col-80">{{review.author}}</h3>
-        <h3 class="col col-20">{{review.timeCreated}}, {{review.dateCreated}}</h3>
+        <h4 class="col col-20">{{review.timeCreated}}, {{review.dateCreated}}</h4>
       </div>
     </ion-list>
   </ion-content>

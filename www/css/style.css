@@ -57,22 +57,6 @@ a:link, a:visited, a:hover, a:active  {
   text-decoration:none
 }
 
-#title {
-  float: left;
-}
-
-#posts {
-  float: right;
-}
-
-#author {
-  float: left;
-}
-
-#date {
-  float: right;
-}
-
-#discussion {
-  overflow: auto;
+.subtitle {
+   text-align:center;
 }

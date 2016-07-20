@@ -73,6 +73,31 @@ angular.module('starter')
           downVotes: 0
         }
       ]
+    },
+    {
+      title: "Move memory to memory",
+      author: "Jane Kang",
+      description: "In slide 21 on Runtime organisation, why are we allowed to move memory to memory? I saw in one of the assembly instructions that it had mov [ECX], [EBX]. But I thought this kind of operation was illegal as we had to move it into a register first and then memory.",
+      timeCreated: "13:39",
+      dateCreated: "17 Dec 2014",
+      followUps: [
+        {
+          author: "Anonymous",
+          comment: "I wouldn't worry about it. You won't be asked to write correct assembly code, just pseudocode. It may be wrong, but probably varies between instruction sets.",
+          timeCreated: "12:15",
+          dateCreated: "21 Dec 2014",
+          upVotes: 4,
+          downVotes: 1
+        },
+        {
+          author: "Rob Simmons",
+          comment: "It depends on the architecture. Overall, it really doesn't matter if you can or can not move data from memory to memory. In exams you are usually given Haskell instructions that represent the instructions in that specific architecture, so just use that.",
+          timeCreated: "22:47",
+          dateCreated: "24 Dec 2014",
+          upVotes: 7,
+          downVotes: 0
+        }
+      ]
     }
   ];
 

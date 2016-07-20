@@ -5,4 +5,12 @@ angular.module('starter')
     $scope.add = function(course) {
         window.alert("Added!");
     }
+
+    $scope.remove = function(course) {
+        window.alert("Removed!");
+    }
+
+    $scope.isUserCourse = function(course) {
+        return false;
+    }
 });

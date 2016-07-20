@@ -83,7 +83,15 @@ angular.module('starter')
       comment: "I thought this course was kinda hard but interesting.",
       timeCreated: "21:44",
       dateCreated: "29 Mar 2015",
-      rating: 3.8
+      rating: 3.3
+    },
+    {
+      title: "Such a great course",
+      author: "John Smith",
+      comment: "The lecture notes were so detailed and the lecturer explained everything so well with loads of examples!",
+      timeCreated: "10:29",
+      dateCreated: "02 Jun 2015",
+      rating: 4.7
     }
   ];
 

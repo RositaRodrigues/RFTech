@@ -1,8 +1,8 @@
 angular.module('starter')
-  .controller('DiscussionsCtrl', function($scope, $stateParams, Database) {
+  .controller('ReviewsCtrl', function($scope, $stateParams, Database) {
     $scope.courseCode = $stateParams.coursecode;
     $scope.courseTitle = $stateParams.coursetitle;
     $scope.academicYear = $stateParams.academicyear;
 
-    $scope.discussions = Database.getDiscussions();
+    $scope.reviews = Database.getReviews();
   });

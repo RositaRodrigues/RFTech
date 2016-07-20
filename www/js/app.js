@@ -103,6 +103,15 @@ angular.module('starter', ['ionic']) // remove starter.controllers?
       }
     }
   })
+  .state('app.reviews', {
+    url: '/course=:coursecode&title=:coursetitle&year=:academicyear/reviews',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/reviews.html',
+        controller: 'ReviewsCtrl'
+      }
+    }
+  })
   .state('app.search', {
     url: '/search',
     views: {

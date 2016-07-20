@@ -4,7 +4,13 @@
       <a href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/review={{reviews.indexOf(review)}}">
         <div class="flex-container row wrap">
           <h2 class="col col-80">{{review.title}}</h2>
-          <h3 class="col col-20">Rated: {{review.stars}}</h3>
+          <h3 class="col col-20">Rating: {{review.rating}}<br>
+            <span ng-repeat="number in [1,2,3,4,5]">
+              <span ng-show="needsFullStar(number, {{review.rating}})"><i class="ion-ios-star"></i></span>
+              <span ng-show="needsHalfStar(number, {{review.rating}})"><i class="ion-ios-star-half"></i></span>
+              <span ng-show="needsNoStar(number, {{review.rating}})"><i class="ion-ios-star-outline"></i></span>
+            </span>
+          </h3>
         </div>
         <div>
           {{review.comment}}

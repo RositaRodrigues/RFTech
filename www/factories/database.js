@@ -83,7 +83,7 @@ angular.module('starter')
       comment: "I thought this course was kinda hard but interesting.",
       timeCreated: "21:44",
       dateCreated: "29 Mar 2015",
-      stars: 3.8
+      rating: 3.8
     }
   ];
 

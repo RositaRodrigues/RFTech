@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic']) // remove starter.controllers?
+angular.module('starter', ['ionic',]) // remove starter.controllers?
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -85,6 +85,15 @@ angular.module('starter', ['ionic']) // remove starter.controllers?
       }
     }
   })
+  .state('app.reviewsByMe', {
+    url: '/reviewsByMe',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/reviewsByMe.html',
+        controller: 'RCtrl'
+      }
+    }
+  })
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {
@@ -130,6 +139,25 @@ angular.module('starter', ['ionic']) // remove starter.controllers?
       }
     }
   })
+    .state('app.writeReview', {
+    url: '/writeReview',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/writeAReview.html',
+        controller: 'MyReviewsCtrl as ds'
+      }
+    }
+  })
+    .state('app.single1', {
+    url: '/reviews/:reviewId',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/review-detail.html',
+        controller: 'ReviewDetailCtrl'
+      }
+    }
+  })
+
   .state('app.settings', {
     url: '/settings',
     views: {

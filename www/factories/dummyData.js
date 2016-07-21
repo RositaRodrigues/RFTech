@@ -1,10 +1,10 @@
 angular.module('starter')
 
-.factory('Chats', function() {
+.factory('Courses', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var chats = [{
+  var courses = [{
     id: 0,
     coursecode:'2322' ,
     courseName: 'biology concepts',
@@ -60,15 +60,15 @@ angular.module('starter')
 
   return {
     all: function() {
-      return chats;
+      return courses;
     },
     remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
+      courses.splice(courses.indexOf(chat), 1);
     },
     get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+      for (var i = 0; i < courses.length; i++) {
+        if (courses[i].id === parseInt(chatId)) {
+          return courses[i];
         }
       }
       return null;

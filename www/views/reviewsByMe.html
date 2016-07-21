@@ -2,20 +2,20 @@
   <ion-content>
   <p>hi</p>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="r in list " type="item-text-wrap" href="#/app/reviews/{{r.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="review in list | orderBy: '-date'" type="item-text-wrap" href="#/app/reviews/{{review.id}}">
         <img ng-src="img/identicon.png">
 
-        <h2>{{r.courseCode}}</h2>
-        <h3>{{r.courseName}}</h3>
-        <p>Rating: {{r.rating}}</p>
-        <p>{{r.comments}} ....</p>
+        <h2>{{review.courseCode}}</h2>
+        <h3>{{review.courseName}}</h3>
+        <p>Rating: {{review.rating}}</p>
+        <p>{{review.comments}} ....</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
-        <ion-option-button class="button-assertive" ng-click="remove(r)">
+        <ion-option-button class="button-assertive" ng-click="remove(review)">
           Delete
         </ion-option-button>
       </ion-item>
-      
+
     </ion-list>
   </ion-content>
 </ion-view>

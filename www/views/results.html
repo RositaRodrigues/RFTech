@@ -9,7 +9,7 @@
 
     <hr>
     <div class="flex-container row wrap">
-      <h4 class="col col-10">Add to My Courses</h4>
+      <h4 class="col col-10"></h4>
       <h4 class="col col-20">Course Code</h4>
       <h4 class="col col-50">Course Title</h4>
       <h4 class="col col-20">Academic Year</h4>
@@ -18,7 +18,7 @@
 
     <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox">
       <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
-        
+
         <div class="flex-container row wrap">
           <div class="col col-10">
             <span ng-show="isUserCourse(course)">

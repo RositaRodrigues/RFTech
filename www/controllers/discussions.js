@@ -5,4 +5,5 @@ angular.module('starter')
     $scope.academicYear = $stateParams.academicyear;
 
     $scope.discussions = Database.getDiscussions();
+    // $scope.discussions = firebase.database().ref('discussions/');
   });

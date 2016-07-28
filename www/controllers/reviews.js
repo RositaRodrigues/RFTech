@@ -4,8 +4,22 @@ angular.module('starter')
     $scope.courseTitle = $stateParams.coursetitle;
     $scope.academicYear = $stateParams.academicyear;
 
-    $scope.reviews = Database.getReviews();
+    var reviews = [];
+    // $scope.reviews = Database.getReviews();
+    firebase.database().ref('reviews/'+$scope.courseCode).push(angular.copy(Database.getReview1()));
+    firebase.database().ref('reviews/'+$scope.courseCode).push(angular.copy(Database.getReview2()));
 
+    firebase.database().ref('reviews/'+$scope.courseCode).once('value').then(function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        console.log(childSnapshot.val());
+        reviews.push(childSnapshot.val());
+      });
+    });
+    $scope.reviews = reviews;
+    console.log(reviews);
+    // firebase.database().ref('reviews/'+$scope.courseCode).on('child_added', function(data) {
+    //   console.log(data.val());
+    // });
     $scope.needsFullStar = function(number, rating) {
       return number <= rating;
     }

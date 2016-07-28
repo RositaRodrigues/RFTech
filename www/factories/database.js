@@ -101,6 +101,24 @@ angular.module('starter')
     }
   ];
 
+  var dummyReview1 = {
+				title: "This is my review",
+      	author: "Anonymous",
+      	comment: "I thought this course was kinda hard but interesting.",
+      	timeCreated: "21:44",
+      	dateCreated: "29 Mar 2015",
+      	rating: 3.3
+	};
+
+  var dummyReview2 = {
+      title: "Such a great course",
+      author: "John Smith",
+      comment: "The lecture notes were so detailed and the lecturer explained everything so well with loads of examples!",
+      timeCreated: "10:29",
+      dateCreated: "02 Jun 2015",
+      rating: 4.7
+  };
+
   var dummyReviews = [
     {
       title: "This is my review",
@@ -129,6 +147,12 @@ angular.module('starter')
     },
     getReviews: function() {
       return dummyReviews;
+    },
+    getReview1: function() {
+      return dummyReview1;
+    },
+    getReview2: function() {
+      return dummyReview2;
     }
   };
 });

@@ -1,8 +1,35 @@
 angular.module('starter')
-.controller('ResultsCtrl', function($scope, Database) {
+.controller('ResultsCtrl', function($scope, $firebase, Database) {
     $scope.courses = Database.getCourses();
-
+    $scope.course = $scope.courses[0];
     $scope.add = function(course) {
+      // firebase.database().ref('users').push({
+      //   username: 'tester1',
+      //   email: 'tester1@email.com'
+      // });
+      // var coursesKey = firebase.database().ref().child('courses').push().key;
+      var updateData = {};
+      // var postData = {
+      //   name: "mult calc",
+      //   academicyear: "2015-16",
+      //   code: "m2aa2"
+      // };
+      //
+        var course = $scope.course;
+        var postData = {
+          name: "intro to numerical analysis",
+          academicyear: "2015-14",
+          code: "m2aa3"
+        };
+        // use angular.copy() for referenced arrays eg Database.getCourses()[0] to remove $$hashKey.
+        // updateData['courses/' + postData.code] = angular.copy(postData);
+        // updateData['discussions/' + postData.code] = angular.copy(Database.getDiscussions());
+        // firebase.database().ref().update(updateData);
+        for(var i = 0; i < Database.getDiscussions().length; i++) {
+          firebase.database().ref('discussions/').push(angular.copy(Database.getDiscussions()[i]));
+        }
+        console.log(course);
+        console.log(postData);
         window.alert("Added!");
     }
 

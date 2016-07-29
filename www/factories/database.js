@@ -22,37 +22,45 @@ angular.module('starter')
       title: "Multivariable Calculus",
       code: "M2AA2",
       year: "2015-16",
-      uniCode: "198"
+      uniCode: "198",
+      about: "This module aims to give students experience of working in a team, and of the problems of communication and scale in software engineering. It will consolidate and integrate the techniques and concepts introduced in earlier courses (principally COMP1216 Software Modelling and Design) and demonstrate the need for a professional approach to all aspects of software development.",
+      link: "http://www.ecs.soton.ac.uk/module/COMP2211"
     },
     {
       title: "Compilers",
       code: "CO221",
       year: "2014-15",
-      uniCode: "198"
+      uniCode: "198",
+      about: "blah blah "
     },
     {
       title: "Software Engineering Design",
       code: "CO220",
       year: "2015-16",
-      uniCode: "198"
+      uniCode: "198",
+      about: "blah blah "
     },
     {
       title: "Introduction to Artificial Intelligence",
       code: "CO231",
       year: "2014-15",
-      uniCode: "198"
+      uniCode: "198",
+      about: "blah blah "
     },
     {
       title: "Statistics",
       code: "MJS2",
       year: "2014-15",
-      uniCode: "198"
+      uniCode: "198",
+      about: "blah blah "
+
     },
     {
       title: "Operating Systems",
       code: "CO211",
       year: "2014-15",
-      uniCode: "198"
+      uniCode: "198",
+      about: "blah blah "
     }
   ];
 
@@ -124,6 +132,18 @@ angular.module('starter')
     getCourses: function() {
       return dummyCourses;
     },
+    getCourse :function(courseCode) {
+      for (i = 0; i < dummyCourses.length; i++) {
+        if(dummyCourses[i].code === courseCode)
+        {
+          return dummyCourses[i];
+        }
+        else {
+          console.log('not found');
+        }
+      }
+    },
+
     getDiscussions: function() {
       return dummyDiscussions;
     },

@@ -1,50 +1,27 @@
 angular.module('starter')
-.controller('LoginCtrl', function($scope, $state) {
+.controller('LoginCtrl', ['$scope', '$state', 'universityLogin', function($scope, $state, university) {
 
-  var univDictionary = {
-    'ucl.ac.uk': 'UCL',
-    'imperial.ac.uk': 'Imperial',
-    'warwick.ac.uk': 'Warwick',
-    'cam.ac.uk': 'Cambridge',
-    'ox.ac.uk': 'Oxford',
-    'bristol.ac.uk': 'Bristol'
-  };
-
-  // Form data for the login page
-  $scope.loginData = {
-    univEmail: '',
-    password: ''
-  };
+  // Form data for the login page pulled from 'universityLogin' factory
+  $scope.loginData = university.getLoginData();
 
   // Perform the login action when the user submits the login form
-  $scope.doLogin = function(emailStringArray) {
-
+  $scope.doLogin = function() {
     // TODO - check with firebase database whether user exists
-    var userExists = false; // DEFAULT will be false initially, true for testing purposes
-
-    // Finding domain
-    emailStringArray = $scope.loginData.univEmail.split("@");
-    var domainStringLocation = emailStringArray.length - 1;
-    var univDomain = emailStringArray[domainStringLocation];
-    if(univDictionary[univDomain]!==null) {
-      $scope.university = univDictionary[univDomain];
-    } else {
-      $scope.university = "Your university is not currently supported by our app. We hope to add you guys soon!";
-    }
+    var userExists = true; // DEFAULT will be false initially, true for testing purposes
 
     // Routing to Search page
     if(userExists) {
       $state.go('app.search');
     } else {
-      $scope.loginError = "Login error bitch, try again."
+      $scope.loginError = "Login error, try again."
     }
 
-    // Test console.log(s)
-    console.log('Doing login', $scope.loginData);
-    console.log('univEmail: ', $scope.loginData.univEmail);
-    console.log('univEmail split at @: ', emailStringArray);
-    console.log('University domain: ', univDomain);
-    console.log('University: ', $scope.university);
+    // // Test console.log(s)
+    // console.log('Doing login', $scope.loginData);
+    // console.log('univEmail: ', $scope.loginData.univEmail);
+    // console.log('univEmail split at @: ', emailStringArray);
+    // console.log('University domain: ', univDomain);
+    // console.log('University: ', $scope.university);
   };
 
-});
+}]);

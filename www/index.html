@@ -15,6 +15,23 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+
+    <!-- firebase/angularfire js -->
+    <script src="js/firebase/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyA6C0F8TkWUwnVm1ryhNO7GMUarwLBb7i0",
+        databaseURL: "https://rf-tech.firebaseio.com",
+        storageBucket: "rf-tech.appspot.com",
+      };
+      firebase.initializeApp(config);
+
+      var database = firebase.database();
+    </script>
+
+      <script src="js/firebase/angularfire.min.js"></script>
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -36,8 +53,10 @@
     <script src="controllers/myReviews.js"></script>
     <script src="controllers/login.js"></script>
 
+    <!-- Factories -->
     <script src="factories/database.js"></script>
-     <script src="factories/dummyData.js"></script>
+    <script src="factories/dummyData.js"></script>
+    <script src="factories/university.js"></script>
   </head>
 
   <body>

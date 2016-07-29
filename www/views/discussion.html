@@ -1,6 +1,6 @@
 <ion-view view-title="{{courseCode}} {{courseTitle}} {{academicYear}}">
   <ion-content>
-    <!-- <hr>
+    <hr>
     <ion-list class="item">
       <div class="flex-container row wrap">
         <h2 class="col col-80">{{discussion.title}}
@@ -15,7 +15,7 @@
         <h4 class="col col-20">{{discussion.timeCreated}}, {{discussion.dateCreated}}</h4>
       </div>
     </ion-list>
-    <hr> -->
+    <hr>
 
     <ion-list class="item low-pad-item" ng-repeat="followUp in followUps | filter:searchBox">
       <div class="flex-container row wrap">

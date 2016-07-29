@@ -3,9 +3,14 @@ angular.module('starter')
     $scope.courseCode = $stateParams.coursecode;
     $scope.courseTitle = $stateParams.coursetitle;
     $scope.academicYear = $stateParams.academicyear;
+    var discussionID = $stateParams.ID;
+
+    firebase.database().ref('discussions/'+$scope.courseCode+'/'+discussionID).once('value').then(function(snapshot) {
+      $scope.discussion = snapshot.val();
+    });
 
     $scope.followUps = [];
-    firebase.database().ref('followUps/'+$scope.courseCode+'/'+$stateParams.ID).once('value').then(function(snapshot) {
+    firebase.database().ref('followUps/'+$scope.courseCode+'/'+discussionID).once('value').then(function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
         console.log(childSnapshot.val());
         $scope.followUps.push(childSnapshot.val());

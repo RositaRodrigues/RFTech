@@ -1,6 +1,10 @@
 <ion-view view-title="{{courseCode}} {{courseTitle}} {{academicYear}}">
   <ion-content>
-    <h4 class="subtitle">Reviews</h4>
+    <h4 class="subtitle">Reviews
+    <a class="button button-stable" style="float: right;" href="#/app/writeReview">
+      Write a Review
+    </a>
+  </h4> <br>
     <ion-list class="item low-pad-item" ng-repeat="review in reviews | filter:searchBox">
       <div class="flex-container row wrap">
         <h2 class="col col-80">{{review.title}}

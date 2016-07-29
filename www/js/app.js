@@ -144,7 +144,7 @@ angular.module('starter', ['ionic', 'firebase'])
     views: {
       'menuContent': {
         templateUrl: 'views/writeAReview.html',
-        controller: 'MyReviewsCtrl as ds'
+        controller: 'MyReviewsCtrl as ds' // not created yet
       }
     }
   })

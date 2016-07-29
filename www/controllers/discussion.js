@@ -3,9 +3,13 @@ angular.module('starter')
     $scope.courseCode = $stateParams.coursecode;
     $scope.courseTitle = $stateParams.coursetitle;
     $scope.academicYear = $stateParams.academicyear;
-    var index = $stateParams.index;
 
-    $scope.discussion = Database.getDiscussions()[index];
-    $scope.followUps = $scope.discussion.followUps;
+    $scope.followUps = [];
+    firebase.database().ref('followUps/'+$scope.courseCode+'/'+$stateParams.ID).once('value').then(function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        console.log(childSnapshot.val());
+        $scope.followUps.push(childSnapshot.val());
+      });
+    });
 
   });

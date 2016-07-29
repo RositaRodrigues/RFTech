@@ -56,50 +56,48 @@ angular.module('starter')
     }
   ];
 
-  var dummyDiscussions = [
-    {
-      title: "What does the valid bit mean?",
-      author: "John Smith",
-      description: "Might be trivial but I don't fully understand what the valid bit means in a page table and what can be interpreted from it.",
-      timeCreated: "10:27",
-      dateCreated: "12 Feb 2015",
-      followUps: [
-        {
-          author: "Anonymous",
-          comment: "It's one if the frame pointed to is valid (it's in physical memory), otherwise it's zero. It might be zero if it's an uninitialized page, or it's swapped out etc.",
-          timeCreated: "19:05",
-          dateCreated: "12 Feb 2015",
-          upVotes: 5,
-          downVotes: 0
-        }
-      ]
-    },
-    {
-      title: "Move memory to memory",
-      author: "Jane Kang",
-      description: "In slide 21 on Runtime organisation, why are we allowed to move memory to memory? I saw in one of the assembly instructions that it had mov [ECX], [EBX]. But I thought this kind of operation was illegal as we had to move it into a register first and then memory.",
-      timeCreated: "13:39",
-      dateCreated: "17 Dec 2014",
-      followUps: [
-        {
-          author: "Anonymous",
-          comment: "I wouldn't worry about it. You won't be asked to write correct assembly code, just pseudocode. It may be wrong, but probably varies between instruction sets.",
-          timeCreated: "12:15",
-          dateCreated: "21 Dec 2014",
-          upVotes: 4,
-          downVotes: 1
-        },
-        {
-          author: "Rob Simmons",
-          comment: "It depends on the architecture. Overall, it really doesn't matter if you can or can not move data from memory to memory. In exams you are usually given Haskell instructions that represent the instructions in that specific architecture, so just use that.",
-          timeCreated: "22:47",
-          dateCreated: "24 Dec 2014",
-          upVotes: 7,
-          downVotes: 0
-        }
-      ]
-    }
-  ];
+  var dummyDiscussion1 =  {
+    title: "What does the valid bit mean?",
+    author: "John Smith",
+    description: "Might be trivial but I don't fully understand what the valid bit means in a page table and what can be interpreted from it.",
+    timeCreated: "10:27",
+    dateCreated: "12 Feb 2015",
+		posts: 1
+	};
+	var dummyDiscussion2 = {
+    title: "Move memory to memory",
+    author: "Jane Kang",
+    description: "In slide 21 on Runtime organisation, why are we allowed to move memory to memory? I saw in one of the assembly instructions that it had mov [ECX], [EBX]. But I thought this kind of operation was illegal as we had to move it into a register first and then memory.",
+    timeCreated: "13:39",
+    dateCreated: "17 Dec 2014",
+		posts: 2
+	};
+
+  var dummyFollowUp1Post1 = {
+    author: "Anonymous",
+    comment: "It's one if the frame pointed to is valid (it's in physical memory), otherwise it's zero. It might be zero if it's an uninitialized page, or it's swapped out etc.",
+    timeCreated: "19:05",
+    dateCreated: "12 Feb 2015",
+    upVotes: 5,
+    downVotes: 0
+	};
+
+  var dummyFollowUp2Post1 = {
+    author: "Anonymous",
+    comment: "I wouldn't worry about it. You won't be asked to write correct assembly code, just pseudocode. It may be wrong, but probably varies between instruction sets.",
+    timeCreated: "12:15",
+    dateCreated: "21 Dec 2014",
+    upVotes: 4,
+    downVotes: 1
+  };
+  var dummyFollowUp2Post2 = {
+    author: "Rob Simmons",
+    comment: "It depends on the architecture. Overall, it really doesn't matter if you can or can not move data from memory to memory. In exams you are usually given Haskell instructions that represent the instructions in that specific architecture, so just use that.",
+    timeCreated: "22:47",
+    dateCreated: "24 Dec 2014",
+    upVotes: 7,
+    downVotes: 0
+  };
 
   var dummyReview1 = {
 				title: "This is my review",
@@ -119,34 +117,24 @@ angular.module('starter')
       rating: 4.7
   };
 
-  var dummyReviews = [
-    {
-      title: "This is my review",
-      author: "Anonymous",
-      comment: "I thought this course was kinda hard but interesting.",
-      timeCreated: "21:44",
-      dateCreated: "29 Mar 2015",
-      rating: 3.3
-    },
-    {
-      title: "Such a great course",
-      author: "John Smith",
-      comment: "The lecture notes were so detailed and the lecturer explained everything so well with loads of examples!",
-      timeCreated: "10:29",
-      dateCreated: "02 Jun 2015",
-      rating: 4.7
-    }
-  ];
-
   return {
     getCourses: function() {
       return dummyCourses;
     },
-    getDiscussions: function() {
-      return dummyDiscussions;
+    getDiscussion1: function() {
+      return dummyDiscussion1;
     },
-    getReviews: function() {
-      return dummyReviews;
+    getDiscussion2: function() {
+      return dummyDiscussion2;
+    },
+    getDummyFollowUp1Post1: function() {
+      return dummyFollowUp1Post1;
+    },
+    getDummyFollowUp2Post1: function() {
+      return dummyFollowUp2Post1;
+    },
+    getDummyFollowUp2Post2: function() {
+      return dummyFollowUp2Post2;
     },
     getReview1: function() {
       return dummyReview1;

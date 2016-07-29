@@ -41,7 +41,7 @@ angular.module('starter', ['ionic', 'firebase'])
     }
   })
   .state('app.discussion', {
-    url: '/course=:coursecode&title=:coursetitle&year=:academicyear/discussion=:index',
+    url: '/course=:coursecode&title=:coursetitle&year=:academicyear/discussion=:ID',
     views: {
       'menuContent': {
         templateUrl: 'views/discussion.html',

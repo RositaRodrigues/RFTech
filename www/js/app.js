@@ -140,11 +140,11 @@ angular.module('starter', ['ionic', 'firebase'])
     }
   })
     .state('app.writeReview', {
-    url: '/writeReview',
+    url: '/course=:coursecode&title=:coursetitle&year=:academicyear/writeReview',
     views: {
       'menuContent': {
         templateUrl: 'views/writeAReview.html',
-        controller: 'MyReviewsCtrl as ds' // not created yet
+        controller: 'WriteReviewCtrl'
       }
     }
   })

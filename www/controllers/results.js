@@ -25,11 +25,11 @@ angular.module('starter')
         // updateData['courses/' + postData.code] = angular.copy(postData);
         // updateData['discussions/' + postData.code] = angular.copy(Database.getDiscussions());
         // firebase.database().ref().update(updateData);
-        for(var i = 0; i < Database.getDiscussions().length; i++) {
-          firebase.database().ref('discussions/').push(angular.copy(Database.getDiscussions()[i]));
-        }
+
+        firebase.database().ref('discussions/').push(angular.copy(Database.getDiscussion1()));
+        firebase.database().ref('discussions/').push(angular.copy(Database.getDiscussion2()));
         console.log(course);
-        console.log(postData);
+        console.log("blaaaah");
         window.alert("Added!");
     }
 

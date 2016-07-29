@@ -1,27 +1,21 @@
 <ion-view view-title="Write a Review">
   <ion-content class="padding">
-    <div style="text-align:center">
-      <i class="ion-android-create"></i>
-    </div>
+
     <div class="list">
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Course Code</span>
-    <input ng-model="ds.courseCode"type="text" placeholder="Course Code">
-  </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Title</span>
+        <input type="text" placeholder="Title">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Review</span>
+        <input type="text" placeholder="Review">
+      </label>
 
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Course Name</span>
-    <input ng-model="ds.courseName" type="text" placeholder="Course Name">
-  </label>
+    </div>
 
-  <br> <br>
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Comments</span>
-    <input ng-model="ds.comments" type="text" placeholder="Comments">
-  </label>
-</div>
-
-<span>Rating: </span>  <i class="ion-android-star"></i>
+    <form>
+      <span>Rating out of 5: <input type="text" name="rating" maxlength="3" size="3" style="border:1px solid #d9d9d9"></span>
+    </form>
 
 <br><br>
   <button ng-click="todoAdd()">submit</button>

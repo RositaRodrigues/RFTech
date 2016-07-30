@@ -2,7 +2,7 @@
   <ion-content>
     <hr>
 
-    <ion-list class="item">
+    <ion-list class="item item-text-wrap">
       <div class="flex-container row wrap">
         <h2 class="col col-80">{{discussion.title}}
           <p>
@@ -13,13 +13,13 @@
       </div>
       <div class="flex-container row wrap">
         <h3 class="col col-80">{{discussion.author}}</h3>
-        <h4 class="col col-20">{{discussion.timeCreated}}, {{discussion.dateCreated}}</h4>
+        <h4 class="col col-20">{{discussion.timeCreated}},<br>{{discussion.dateCreated}}</h4>
       </div>
     </ion-list>
 
     <hr>
 
-    <ion-list class="item low-pad-item" ng-repeat="followUp in followUps | filter:searchBox">
+    <ion-list class="item low-pad-item item-text-wrap" ng-repeat="followUp in followUps | filter:searchBox">
       <div class="flex-container row wrap">
         <p class="col col-80">{{followUp.comment}}</p>
         <h3 class="col col-20">
@@ -31,7 +31,7 @@
       </div>
       <div class="flex-container row wrap">
         <h3 class="col col-80">{{followUp.author}}</h3>
-        <h4 class="col col-20">{{followUp.timeCreated}}, {{followUp.dateCreated}}</h4>
+        <h4 class="col col-20">{{followUp.timeCreated}},<br>{{followUp.dateCreated}}</h4>
       </div>
     </ion-list>
 

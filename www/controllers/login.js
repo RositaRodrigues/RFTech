@@ -1,5 +1,5 @@
 angular.module('starter')
-.controller('LoginCtrl', ['$scope', '$state', 'universityLogin', function($scope, $state, university) {
+.controller('LoginCtrl', ['$scope', '$state', 'universityLogin', '$http', function($scope, $state, university, $http) {
 
   // Form data for the login page pulled from 'universityLogin' factory
   $scope.loginData = university.getLoginData();

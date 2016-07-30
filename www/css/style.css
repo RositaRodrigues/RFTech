@@ -94,8 +94,3 @@ a:link, a:visited, a:hover, a:active  {
     -ms-flex-align: center;
     align-items: center;
 }
-
-.uni-img {
-  height: 10px;
-  width: 50px;
-}

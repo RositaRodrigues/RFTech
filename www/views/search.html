@@ -1,8 +1,28 @@
 <ion-view show-nav-bar="true" hide-back-button="true">
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Search</h1>
+  </ion-header-bar>
   <ion-content>
     <div class="item item-image full-image">
       <img ng-src="{{src}}"/>
     </div>
 
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input id="search" type="text" ng-model="searchBox" placeholder="Search courses">
+      </label>
+    </div>
+
+    <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox" ng-show="searchBox.length">
+      <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
+        <div class="flex-container row wrap">
+          <div class="col col-20">{{course.code}}</div>
+          <div class="col col-50">{{course.title}}</div>
+        </div>
+
+      </a>
+      <i class="icon ion-chevron-right icon-accessory"></i>
+    </div>
   </ion-content>
 </ion-view>

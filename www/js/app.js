@@ -31,6 +31,15 @@ angular.module('starter', ['ionic']) // remove starter.controllers?
     templateUrl: 'views/menu.html',
     controller: 'MenuCtrl'
   })
+  .state('app.register', {
+    url: '/register',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl'
+      }
+    }
+  })
   .state('app.login', {
     url: '/login',
     views: {

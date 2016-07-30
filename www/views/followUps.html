@@ -23,7 +23,8 @@
       <div class="flex-container row wrap">
         <p class="col col-80">{{followUp.comment}}</p>
         <h3 class="col col-20">
-          {{followUp.upVotes}} <i class="ion-thumbsup"></i> &nbsp {{followUp.downVotes}} <i class="ion-thumbsdown"></i><br>
+          {{followUp.upVotes}} <i style="cursor:pointer" class="ion-thumbsup" ng-click="thumbsUp()"></i> &nbsp <!-- arg: followUp.ID -->
+          {{followUp.downVotes}} <i style="cursor:pointer" class="ion-thumbsdown" ng-click="thumbsDown()"></i><br>
         </h3>
       </div>
       <div>

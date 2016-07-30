@@ -16,4 +16,11 @@ angular.module('starter')
       });
     });
 
+    $scope.thumbsUp = function() {
+      window.alert("Like!");
+    };
+
+    $scope.thumbsDown = function() {
+      window.alert("Dislike!");
+    };
   });

@@ -1,11 +1,16 @@
-<ion-view view-title="{{courseCode}} {{courseTitle}} {{academicYear}}">
+<ion-view style="color:blue;font-family:roboto;font-weight:30px"view-title="{{courseCode}} {{courseTitle}} {{academicYear}}">
   <ion-content>
     <ion-list>
-      <ion-item menu-close href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/discussions">
+
+      <a class="waves-effect waves-blue btn-large"  href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/reviews" ><i class="material-icons left">stars</i>Reviews</a>
+      <a class="waves-effect waves-blue btn-large"  href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/discussions" ><i class="material-icons left">chat_bubble_outline</i>Discussion</a>
+      <!-- <a class="waves-effect waves-blue btn-large"  href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/information" ><i class="material-icons left">info</i>Information</a> -->
+
+      <!-- <ion-item menu-close href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/discussions">
         Discussions
       </ion-item>
       <ion-item menu-close href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/reviews">
         Reviews
-      </ion-item>
+      </ion-item> -->
   </ion-content>
 </ion-view>

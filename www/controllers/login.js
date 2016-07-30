@@ -15,13 +15,6 @@ angular.module('starter')
     } else {
       $scope.loginError = "Login error, try again."
     }
-
-    // // Test console.log(s)
-    // console.log('Doing login', $scope.loginData);
-    // console.log('univEmail: ', $scope.loginData.univEmail);
-    // console.log('univEmail split at @: ', emailStringArray);
-    // console.log('University domain: ', univDomain);
-    // console.log('University: ', $scope.university);
   };
 
 }]);

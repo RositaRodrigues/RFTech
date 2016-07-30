@@ -1,46 +1,41 @@
 angular.module('starter')
-.factory('universityLogin', ['$http', function($http) {
+.factory('universityLogin', ['$http', '$q', function($http, $q) {
 
   var loginData = {
     univEmail: '',
     password: ''
   };
 
-
-  var univDictionary = {
-    'ucl.ac.uk': 'UCL',
-    'imperial.ac.uk': 'Imperial',
-    'warwick.ac.uk': 'Warwick',
-    'cam.ac.uk': 'Cambridge',
-    'ox.ac.uk': 'Oxford',
-    'bristol.ac.uk': 'Bristol',
-    'harvard.edu': 'Harvard',
-    'jhu.edu': 'JohnsHopkins'
-  };
+  var deferred = $q.defer();
+  $http.get('/json/universities.json').then(function(data) {
+    deferred.resolve(data);
+  });
 
   return {
     getLoginData: function() {
       return loginData;
     },
-    // Finding university through email domain
     getUniversity: function(univEmail) {
       var emailStringArray = univEmail.split("@");
+      console.log("emailStringArray: ", emailStringArray);
       var domainStringLocation = emailStringArray.length - 1;
+      console.log("domainStringLocation: ", domainStringLocation);
       var univDomain = emailStringArray[domainStringLocation];
-      if(univDictionary[univDomain]!==null) {
-        var university = univDictionary[univDomain];
-      } else {
-        var university = "Your university is not currently supported by our app. We hope to add you guys soon!";
-      }
-      return university;
+      console.log("univDomain: ", univDomain);
 
-      // var emailStringArray = univEmail.split("@");
-      // // var emailStringArray = univEmail.split(univEmail[univEmail.indexOf("@")-1]);
-      // console.log(univEmail[univEmail.indexOf("@")-1]);
-      // var univDomain = emailStringArray[emailStringArray.length - 1];
-      // console.log('univDomain: ', univDomain);
-      // // var universityIndex = univDictionary.map(function(e) { return e.hello; }).indexOf(univDomain);
-      // console.log('univDictionary: ', univDictionary);
+      var promise = deferred.promise;
+      var univDictionary = {};
+      return promise.then(function(data) {
+        universitiesObject = data.data;
+        var rObj = {};
+        var univDictionary = universitiesObject.forEach(function(obj) {
+          rObj[obj["domain"]] = obj["name"];
+        });
+        return rObj;
+        // console.log(univDictionary);
+      }).then(function(univDictionary) {
+        return univDictionary[univDomain];
+      });
     }
   };
 

@@ -4,8 +4,9 @@ angular.module('starter')
     $scope.courseTitle = $stateParams.coursetitle;
     $scope.academicYear = $stateParams.academicyear;
 
-    firebase.database().ref('reviews/'+$scope.courseCode).push(angular.copy(Database.getReview1()));
-    firebase.database().ref('reviews/'+$scope.courseCode).push(angular.copy(Database.getReview2()));
+    // CODE TO FILL FIREBASE WITH DUMMY DATA
+    // firebase.database().ref('reviews/'+$scope.courseCode).push(angular.copy(Database.getReview1()));
+    // firebase.database().ref('reviews/'+$scope.courseCode).push(angular.copy(Database.getReview2()));
 
     $scope.reviews = [];
     firebase.database().ref('reviews/'+$scope.courseCode).once('value').then(function(snapshot) {

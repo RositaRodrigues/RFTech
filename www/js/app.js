@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic']) // remove starter.controllers?
+angular.module('starter', ['ionic', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -58,12 +58,21 @@ angular.module('starter', ['ionic']) // remove starter.controllers?
       }
     }
   })
-  .state('app.discussion', {
-    url: '/course=:coursecode&title=:coursetitle&year=:academicyear/discussion=:index',
+  .state('app.createDiscussion', {
+    url: '/course=:coursecode&title=:coursetitle&year=:academicyear/createDiscussion',
     views: {
       'menuContent': {
-        templateUrl: 'views/discussion.html',
-        controller: 'DiscussionCtrl'
+        templateUrl: 'views/createDiscussion.html',
+        controller: 'CreateDiscussionCtrl'
+      }
+    }
+  })
+  .state('app.followUps', {
+    url: '/course=:coursecode&title=:coursetitle&year=:academicyear/discussion=:ID',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/followUps.html',
+        controller: 'FollowUpsCtrl'
       }
     }
   })
@@ -76,48 +85,12 @@ angular.module('starter', ['ionic']) // remove starter.controllers?
       }
     }
   })
-  .state('app.information', {
-    url: '/course=:coursecode&title=:coursetitle&year=:academicyear/information',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/information.html',
-        controller: 'InformationCtrl'
-      }
-    }
-  })
   .state('app.mycourses', {
     url: '/mycourses',
     views: {
       'menuContent': {
         templateUrl: 'views/mycourses.html',
         controller: 'MyCoursesCtrl'
-      }
-    }
-  })
-  .state('app.myfavourites', {
-    url: '/myfavourites',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/myfavourites.html',
-        controller: 'MyFavouritesCtrl'
-      }
-    }
-  })
-  .state('app.myprofile', {
-    url: '/myprofile',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/myprofile.html',
-        controller: 'MyProfileCtrl'
-      }
-    }
-  })
-  .state('app.reviewsByMe', {
-    url: '/reviewsByMe',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/reviewsByMe.html',
-        controller: 'RCtrl'
       }
     }
   })
@@ -149,30 +122,11 @@ angular.module('starter', ['ionic']) // remove starter.controllers?
     }
   })
     .state('app.writeReview', {
-    url: '/writeReview',
+    url: '/course=:coursecode&title=:coursetitle&year=:academicyear/writeReview',
     views: {
       'menuContent': {
         templateUrl: 'views/writeAReview.html',
-        controller: 'MyReviewsCtrl as ds'
-      }
-    }
-  })
-    .state('app.single1', {
-    url: '/reviews/:reviewId',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/review-detail.html',
-        controller: 'ReviewDetailCtrl'
-      }
-    }
-  })
-
-  .state('app.settings', {
-    url: '/settings',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/settings.html',
-        controller: 'SettingsCtrl'
+        controller: 'WriteReviewCtrl'
       }
     }
   });

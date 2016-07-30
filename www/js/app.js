@@ -67,60 +67,6 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
-  .state('app.myfavourites', {
-    url: '/myfavourites',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/myfavourites.html',
-        controller: 'MyFavouritesCtrl'
-      }
-    }
-  })
-  .state('app.myprofile', {
-    url: '/myprofile',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/myprofile.html',
-        controller: 'MyProfileCtrl'
-      }
-    }
-  })
-  .state('app.reviewsByMe', {
-    url: '/reviewsByMe',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/reviewsByMe.html',
-        controller: 'RCtrl'
-      }
-    }
-  })
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  })
-  .state('app.selectCourse', {
-    url: '/selectCourse',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/selectCourse.html',
-        controller: 'SelectCourseCtrl'
-      }
-    }
-  })
-  .state('app.playlists', {
-    url: '/playlists',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/playlists.html',
-        controller: 'PlaylistsCtrl'
-      }
-    }
-  })
   .state('app.results', {
     url: '/results',
     views: {
@@ -156,26 +102,7 @@ angular.module('starter', ['ionic', 'firebase'])
         controller: 'WriteReviewCtrl'
       }
     }
-  })
-    .state('app.single1', {
-    url: '/reviews/:reviewId',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/review-detail.html',
-        controller: 'ReviewDetailCtrl'
-      }
-    }
-  })
-
-  .state('app.settings', {
-    url: '/settings',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/settings.html',
-        controller: 'SettingsCtrl'
-      }
-    }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/results');
+  $urlRouterProvider.otherwise('/app/mycourses');
 });

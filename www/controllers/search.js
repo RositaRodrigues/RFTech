@@ -6,10 +6,7 @@ angular.module('starter')
         $scope.university = university;
         $scope.$apply();
     });
-    console.log($scope.university);
-    // university = university.getUniversity(loginData.univEmail);
-    // // Display university image depending on email from login page
-    // $scope.src = "/img/" + university + ".jpg";
 
+    // Get courses for autocomplete
     $scope.courses = Database.getCourses();
   }]);

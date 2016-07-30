@@ -99,6 +99,11 @@
   padding-right: 20px;
 }
 
+.univ-name {
+  font-size: 4em;
+  font-family: Roboto, Times;
+}
+
 // Fix the minimum width of the leaf level cells
 .text {
   width: @text-width;
@@ -141,6 +146,7 @@ body {
 .card .item{
   background-color: #08AE9E;
 }
+
 a:link, a:visited, a:hover, a:active  {
   color:black;
   background-color:transparent;

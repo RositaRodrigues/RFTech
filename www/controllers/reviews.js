@@ -4,7 +4,21 @@ angular.module('starter')
     $scope.courseTitle = $stateParams.coursetitle;
     $scope.academicYear = $stateParams.academicyear;
 
-    $scope.reviews = Database.getReviews();
+    // CODE TO FILL FIREBASE WITH DUMMY DATA
+    // firebase.database().ref('reviews/'+$scope.courseCode).push(angular.copy(Database.getReview1()));
+    // firebase.database().ref('reviews/'+$scope.courseCode).push(angular.copy(Database.getReview2()));
+
+    $scope.reviews = [];
+    firebase.database().ref('reviews/'+$scope.courseCode).once('value').then(function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        $scope.reviews.push(childSnapshot.val());
+      });
+    });
+
+    // firebase.database().ref('reviews/'+$scope.courseCode).on('child_added', function(data) {
+    //     console.log(data.val());
+    //     $scope.reviews.push(data.val());
+    // });
 
     $scope.needsFullStar = function(number, rating) {
       return number <= rating;

@@ -1,5 +1,5 @@
 angular.module('starter')
-.controller('LoginCtrl', ['$scope', '$state', 'universityLogin', '$http', function($scope, $state, university, $http) {
+.controller('LoginCtrl', ['$scope', '$state', 'universityLogin', '$http', '$ionicHistory', function($scope, $state, university, $http, $ionicHistory) {
 
   // Form data for the login page pulled from 'universityLogin' factory
   $scope.loginData = university.getLoginData();
@@ -11,6 +11,9 @@ angular.module('starter')
 
     // Routing to Search page
     if(userExists) {
+      $ionicHistory.nextViewOptions({
+         disableBack: true
+      });
       $state.go('app.search');
     } else {
       $scope.loginError = "Login error, try again."

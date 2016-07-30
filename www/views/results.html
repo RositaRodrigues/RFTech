@@ -8,7 +8,7 @@
     </div>
 
     <hr>
-    <div class="flex-container row wrap">
+    <div class="flex-container row wrap responsive-sm">
       <h4 class="col col-10"></h4>
       <h4 class="col col-20">Course Code</h4>
       <h4 class="col col-50">Course Title</h4>
@@ -19,7 +19,7 @@
     <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox">
       <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
 
-        <div class="flex-container row wrap">
+        <div class="flex-container row wrap responsive-sm">
           <div class="col col-10">
             <span ng-show="isUserCourse(course)">
               <button class="button" ng-click="remove(course)"><i class="ion-ios-heart"></i></button>

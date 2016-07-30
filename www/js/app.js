@@ -103,6 +103,15 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
+  .state('app.selectCourse', {
+    url: '/selectCourse',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/selectCourse.html',
+        controller: 'SelectCourseCtrl'
+      }
+    }
+  })
   .state('app.playlists', {
     url: '/playlists',
     views: {

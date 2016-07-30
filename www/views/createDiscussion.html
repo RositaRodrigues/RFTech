@@ -1,4 +1,4 @@
-<ion-view view-title="Write a Review">
+<ion-view view-title="Create New Discussion">
   <ion-content class="padding">
 
     <div class="list">
@@ -7,20 +7,19 @@
         <input type="text" placeholder="Title">
       </label>
       <label class="item item-input item-stacked-label">
-        <span class="input-label">Review</span>
-        <input type="text" placeholder="Review">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Rating out of 5</span>
-        <input type="number" step="0.1" min="0" max="5" ng-model="rating" placeholder="Rating">
+        <span class="input-label">Comment</span>
+        <input type="text" placeholder="Comment">
       </label>
     </div>
+
+    <!-- Post as Anonymous option here -->
 
     <br><br>
     <div class="centred-button">
       <button class="button button-large button-dark" style="text-align: center;" ng-click="todoAdd()">
-        Post Review
+        Submit
       </button>
     </div>
+
   </ion-content>
 </ion-view>

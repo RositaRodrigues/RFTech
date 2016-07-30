@@ -10,7 +10,6 @@ angular.module('starter')
     $scope.reviews = [];
     firebase.database().ref('reviews/'+$scope.courseCode).once('value').then(function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
-        console.log(childSnapshot.val());
         $scope.reviews.push(childSnapshot.val());
       });
     });

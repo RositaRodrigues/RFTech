@@ -1,7 +1,12 @@
-<ion-view view-title="{{courseCode}} {{courseTitle}} {{academicYear}}">
+<ion-view view-title="{{courseTitle}}">
   <ion-content>
-    <h4 class="subtitle">Discussions</h4>
-    <ion-list class="item low-pad-item item-icon-right" ng-repeat="discussion in discussions | filter:searchBox">
+    <h4 class="subtitle padding-right">Discussions
+      <a class="button button-small button-dark" style="float: right;" href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/createDiscussion">
+        New Discussion
+      </a>
+    </h4><br>
+
+    <ion-list class="item low-pad-item item-icon-right" ng-repeat="discussion in discussions">
       <a href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/discussion={{discussion.ID}}">
 
         <div class="flex-container row wrap">

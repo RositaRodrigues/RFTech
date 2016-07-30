@@ -26,7 +26,6 @@ angular.module('starter')
         var discussion = childSnapshot.val();
         discussion.ID = childSnapshot.key;
 
-        console.log(discussion);
         $scope.discussions.push(discussion);
       });
     });

@@ -40,6 +40,15 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
+  .state('app.createDiscussion', {
+    url: '/course=:coursecode&title=:coursetitle&year=:academicyear/createDiscussion',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/createDiscussion.html',
+        controller: 'CreateDiscussionCtrl'
+      }
+    }
+  })
   .state('app.followUps', {
     url: '/course=:coursecode&title=:coursetitle&year=:academicyear/discussion=:ID',
     views: {

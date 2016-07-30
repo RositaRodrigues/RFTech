@@ -12,7 +12,6 @@ angular.module('starter')
     $scope.followUps = [];
     firebase.database().ref('followUps/'+$scope.courseCode+'/'+discussionID).once('value').then(function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
-        console.log(childSnapshot.val());
         $scope.followUps.push(childSnapshot.val());
       });
     });

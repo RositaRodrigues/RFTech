@@ -5,8 +5,8 @@ angular.module('starter')
     $scope.academicYear = $stateParams.academicyear;
 
     // CODE TO FILL FIREBASE WITH DUMMY DATA
-    // firebase.database().ref('reviews/'+$scope.courseCode).push(angular.copy(Database.getReview1()));
-    // firebase.database().ref('reviews/'+$scope.courseCode).push(angular.copy(Database.getReview2()));
+    firebase.database().ref('reviews/'+$scope.courseCode).push(angular.copy(Database.getReview1()));
+    firebase.database().ref('reviews/'+$scope.courseCode).push(angular.copy(Database.getReview2()));
 
     $scope.reviews = [];
     firebase.database().ref('reviews/'+$scope.courseCode).once('value').then(function(snapshot) {
@@ -15,6 +15,7 @@ angular.module('starter')
       });
     });
 
+    // i don't think this is needed anymore
     // firebase.database().ref('reviews/'+$scope.courseCode).on('child_added', function(data) {
     //     console.log(data.val());
     //     $scope.reviews.push(data.val());

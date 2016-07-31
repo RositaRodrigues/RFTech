@@ -1,5 +1,5 @@
 angular.module('starter')
-  .controller('WriteReviewCtrl', function($scope, $rootScope, $stateParams, $state) {
+  .controller('WriteReviewCtrl', function($scope, $rootScope, $stateParams) {
     $scope.courseCode = $stateParams.coursecode;
     $scope.courseTitle = $stateParams.coursetitle;
     $scope.academicYear = $stateParams.academicyear;

@@ -1,5 +1,5 @@
 angular.module('starter')
-.controller('MenuCtrl', function($scope, $ionicModal, $timeout) {
+.controller('MenuCtrl', function($scope, $ionicModal, $timeout, $ionicHistory, $state) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -8,6 +8,15 @@ angular.module('starter')
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-
+  $scope.logout = function() {
+    firebase.auth().signOut().then(function() {
+      $ionicHistory.nextViewOptions({
+         disableBack: true
+      });
+      $state.go('app.login');
+    }, function(error) {
+      alert(error);
+    });
+  }
 
 });

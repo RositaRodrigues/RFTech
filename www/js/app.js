@@ -31,24 +31,6 @@ angular.module('starter', ['ionic', 'firebase'])
     templateUrl: 'views/menu.html',
     controller: 'MenuCtrl'
   })
-  .state('app.register', {
-    url: '/register',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/register.html',
-        controller: 'RegisterCtrl'
-      }
-    }
-  })
-  .state('app.login', {
-    url: '/login',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
-      }
-    }
-  })
   .state('app.coursemenu', {
     url: '/course=:coursecode&title=:coursetitle&year=:academicyear/coursemenu',
     views: {
@@ -85,12 +67,30 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
+  .state('app.login', {
+    url: '/login',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+      }
+    }
+  })
   .state('app.mycourses', {
     url: '/mycourses',
     views: {
       'menuContent': {
         templateUrl: 'views/mycourses.html',
         controller: 'MyCoursesCtrl'
+      }
+    }
+  })
+  .state('app.register', {
+    url: '/register',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl'
       }
     }
   })

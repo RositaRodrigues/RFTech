@@ -9,7 +9,19 @@ angular.module('starter')
       var user = firebase.auth().currentUser;
       console.log("Success");
       console.log(user);
-      $rootScope.email = email;
+      // $rootScope.email = email;
+
+      university.getUniversity(email).then(function(university) {
+        var currentUser = {
+          // name: name,
+          email: email,
+          university: university
+        };
+        $rootScope.currentUser = currentUser;
+        console.log("university in login is: " + university);
+      });
+
+
       $ionicHistory.nextViewOptions({
          disableBack: true
       });

@@ -25,6 +25,5 @@ angular.module('starter')
       var errorMessage = error.message;
       alert(error);
     });
-
   };
 })

@@ -112,15 +112,7 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
-  .state('app.results', {
-    url: '/results',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/results.html',
-        controller: 'ResultsCtrl'
-      }
-    }
-  })
+  
   .state('app.reviews', {
     url: '/course=:coursecode&title=:coursetitle&year=:academicyear/reviews',
     views: {

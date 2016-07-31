@@ -211,6 +211,9 @@ a:link, a:visited, a:hover, a:active  {
 
 .subtitle {
    text-align:center;
+   color: grey;
+   font-family: roboto;
+   font-weight: 300;
 }
 
 .center {
@@ -276,6 +279,26 @@ h1 {
 
 .scroll {
     height: 50%;
+}
+/* Reviews page styling 
+==================================*/
+h2.col.col-75.title.ng-binding{
+  font-family: roboto;
+  font-weight: 900;
+  color: grey;
+
+}
+.create-header{
+font-size:50px;text-align:center;color:#2ecc71;
+margin-bottom:4%;
+margin-top:2%;
+}
+
+.comment{
+  font-family: roboto;
+  font-weight: 300;
+  color: grey;
+
 }
 
 /* MyCourseMenu

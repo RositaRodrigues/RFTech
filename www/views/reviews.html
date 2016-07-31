@@ -1,19 +1,19 @@
 <ion-view view-title="{{courseCode}} {{courseTitle}} {{academicYear}}">
   <ion-content>
     <h4 class="subtitle padding-right">Reviews
-      <a class="button button-small button-dark" style="float: right;" href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/writeReview">
+      <a class="button ion-android-create button-small button-dark" style="float: right;" href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/writeReview">
         Write a Review
       </a>
     </h4> <br>
     <ion-list class="item low-pad-item item-text-wrap" ng-repeat="review in reviews | filter:searchBox">
       <div class="flex-container row wrap">
-        <h2 class="col col-75">{{review.title}}
-          <p>
+        <h2 class="col col-75 title">{{review.title}}
+          <p class="comment">
             {{review.comment}}
           </p>
         </h2>
         <h3 class="col col-25">Rating: {{review.rating}}<br>
-          <span ng-repeat="number in [1,2,3,4,5]">
+          <span style="color:#2ecc71" ng-repeat="number in [1,2,3,4,5]">
             <span ng-show="needsFullStar(number, {{review.rating}})"><i class="ion-ios-star"></i></span>
             <span ng-show="needsHalfStar(number, {{review.rating}})"><i class="ion-ios-star-half"></i></span>
             <span ng-show="needsNoStar(number, {{review.rating}})"><i class="ion-ios-star-outline"></i></span>
@@ -21,6 +21,7 @@
         </h3>
       </div>
       <div class="flex-container row wrap">
+        <i style="color:#2ecc71"class="ion-ios-person"> </i>
         <h3 class="col col-75">{{review.author}}</h3>
         <h4 class="col col-25">{{review.timeCreated}}<br>{{review.dateCreated}}</h4>
         <!-- <h4 class="col col-25">{{review.timeCreated}}, 26/03/14</h4> -->

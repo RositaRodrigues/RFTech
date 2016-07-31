@@ -1,7 +1,14 @@
 <ion-view view-title="{{courseCode}} {{courseTitle}} {{academicYear}}">
   <ion-content>
+    <h4 class="subtitle padding-right padding-left">
+      <a class="button button-small button-dark" style="float: left;" ng-click="refresh()">
+        Refresh
+      </a>
+    </h4>
+    <br><br>
     <hr>
 
+    <!-- Display original discussion post in full -->
     <ion-list class="item item-text-wrap">
       <div class="flex-container row wrap">
         <h2 class="col col-80">{{discussion.title}}
@@ -19,6 +26,7 @@
 
     <hr>
 
+    <!-- List all follow ups of this discussion -->
     <ion-list class="item low-pad-item item-text-wrap" ng-repeat="followUp in followUps | filter:searchBox">
       <div class="flex-container row wrap">
         <p class="col col-80">{{followUp.comment}}</p>
@@ -38,9 +46,10 @@
 
     <hr>
 
+    <!-- Create new follow up post -->
     <label class="item item-input item-stacked-label">
       <span class="input-label">Post Follow Up</span>
-      <input type="text" placeholder="Comment" ng-model="comment">
+      <input type="text" placeholder="Comment" ng-model="input.comment">
 
       <label class="item-input item-select" style="padding-left:0px">
         <div class="input-label">Post as</div>
@@ -49,10 +58,11 @@
           <option>Anonymous</option>
         </select>
       </label>
-      <button class="button button-small button-dark" style="float:right; margin-right:10px" ng-click="todoAdd()">
-        Post Follow Up
-      </button>
     </label>
+    <br>
+    <button class="button button-small button-dark" style="float:right; margin-right:10px" ng-click="postFollowUp()">
+      Post Follow Up
+    </button>
 
 
   </ion-content>

@@ -218,7 +218,7 @@ h1 {
 /*.waves-effect.waves-light.btn-large{    width: 100%;margin: 1%;}*/
 .bar.bar-stable .title
 {
-  font-family:roboto;
+  font-family: roboto;
   font-weight:400;
 }
 
@@ -236,25 +236,11 @@ h1 {
 
 /* Utilities
 ==================================*/
-.title-bordered {
-    border-top: solid 2px #bbb;
-    padding-top: 30px;
-}
 
-p {
-    color: #555;
-    margin: 0 0 25px;
-}
 
 .scroll {
     height: 50%;
 }
-
-
-
-
-/* Menu
-==================================*/
 
 
 
@@ -302,7 +288,7 @@ form input, form button {
   background-color: rgba(0,0,0,.2);
   background-repeat: no-repeat;
   padding: 8px 24px 8px 10px;
-  font: roboto;
+  font-family: roboto;
   letter-spacing: .075em;
   color: #fff;
   /*text-shadow: 0 1px 0 rgba(0,0,0,.1);*/

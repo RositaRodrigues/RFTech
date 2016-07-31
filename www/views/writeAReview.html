@@ -4,21 +4,22 @@
     <div class="list">
       <label class="item item-input item-stacked-label">
         <span class="input-label">Title</span>
-        <input type="text" placeholder="Title">
+        <input type="text" ng-model="input.title" placeholder="Title">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Review</span>
-        <input type="text" placeholder="Review">
+        <input type="text" ng-model="input.comment" placeholder="Review">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Rating out of 5</span>
-        <input type="number" step="0.1" min="0" max="5" ng-model="rating" placeholder="Rating">
+        <input type="number" step="0.1" min="0" max="5" ng-model="input.rating" placeholder="Rating">
       </label>
     </div>
 
     <br><br>
     <div class="centred-button">
-      <button class="button button-large button-dark" style="text-align: center;" ng-click="todoAdd()">
+      <!-- <button class="button button-large button-dark" style="text-align: center;" ng-click="postReview(title, comment, rating)"> -->
+      <button class="button button-large button-dark" style="text-align: center;" ng-click="postReview()">
         Post Review
       </button>
     </div>

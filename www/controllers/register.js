@@ -1,5 +1,5 @@
 angular.module('starter')
-.controller('RegisterCtrl', function($scope, $ionicHistory, universityLogin) {
+.controller('RegisterCtrl', function($scope, $ionicHistory, universityLogin, $rootScope, $state) {
 
   $scope.register = function(name, email, password) {
     console.log("Hello");
@@ -10,6 +10,7 @@ angular.module('starter')
       var user = firebase.auth().currentUser;
       console.log("Success");
       console.log(user);
+      $rootScope.email = email;
       $ionicHistory.nextViewOptions({
          disableBack: true
       });

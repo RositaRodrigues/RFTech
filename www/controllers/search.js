@@ -1,8 +1,8 @@
 angular.module('starter')
-  .controller('SearchCtrl', ['$scope', '$stateParams', 'universityLogin', 'Database', function($scope, $stateParams, university, Database) {
+  .controller('SearchCtrl', ['$scope', '$stateParams', 'universityLogin', 'Database', '$rootScope', function($scope, $stateParams, university, Database, $rootScope) {
     // Determine university from input email
-    loginData = university.getLoginData();
-    university.getUniversity(loginData.univEmail).then(function(university) {
+    // loginData = university.getLoginData();
+    university.getUniversity($rootScope.email).then(function(university) {
         $scope.university = university;
     });
 

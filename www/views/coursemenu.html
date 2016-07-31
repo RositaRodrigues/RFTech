@@ -1,11 +1,20 @@
 <ion-view style="color:blue;font-family:roboto;font-weight:30px"view-title="{{courseCode}} {{courseTitle}} {{academicYear}}">
   <ion-content>
     <ion-list>
+    
+      <div class="list">
 
-      <a class="waves-effect waves-blue btn-large"  href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/reviews" ><i class="material-icons left">stars</i>Reviews</a>
-      <a class="waves-effect waves-blue btn-large"  href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/discussions" ><i class="material-icons left">chat_bubble_outline</i>Discussion</a>
-      <!-- <a class="waves-effect waves-blue btn-large"  href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/information" ><i class="material-icons left">info</i>Information</a> -->
+  <a class="item item-icon-left my-coursemenu" href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/reviews">
+    <i class="icon ion-star"></i>
+      Reviews
+    </a>
 
+  <a class="item item-icon-left my-coursemenu" href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/discussions">
+    <i class="icon ion-chatbubbles"></i>
+      Discussions
+    </a>
+</div>
+  
       <!-- <ion-item menu-close href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/discussions">
         Discussions
       </ion-item>

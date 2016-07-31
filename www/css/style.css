@@ -60,6 +60,9 @@
 }
 .pushleft{
  margin-left: 2%;
+ font-family:roboto;
+ font-weight:300;
+ color:grey;
 /*  position: relative;
   right: -55%; */
 }
@@ -275,8 +278,20 @@ h1 {
     height: 50%;
 }
 
+/* MyCourseMenu
+==================================*/
+.my-coursemenu{
+  margin:2%;
+  font-family: roboto;
+  font-weight: 300;
+  color: grey;
 
+}
 
+.my-coursemenu .icon{
+  color: #2ecc71;
+/*  margin-right: 5%;
+*/}
 /* Login
 ==================================*/
 .app-icon {

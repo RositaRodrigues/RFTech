@@ -11,9 +11,9 @@ angular.module('starter')
 
     // Routing to Search page
     if(userExists) {
-      // $ionicHistory.nextViewOptions({
-      //    disableBack: true
-      // });
+      $ionicHistory.nextViewOptions({
+         disableBack: true
+      });
       $state.go('app.search');
     } else {
       $scope.loginError = "Login error, try again."

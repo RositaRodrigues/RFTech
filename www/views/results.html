@@ -1,4 +1,4 @@
-<ion-view view-title="Results">
+ <!--<ion-view view-title="Results">
   <ion-content>
     <div class="list list-inset">
       <label class="item item-input">
@@ -36,5 +36,58 @@
       </a>
       <i class="icon ion-chevron-right icon-accessory"></i>
     </div>
+  </ion-content>
+</ion-view>
+-->
+<ion-view view-title="Results">
+  <ion-content>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" ng-model="searchBox" placeholder="Search courses">
+      </label>
+    </div>
+
+    <hr></hr>
+  <!--  <div class="table-row row wrap">
+      <h4 class="col col-10"></h4>
+      <h4 class="col col-20">Course Code</h4>
+      <h4 class="col col-50">Course Title</h4>
+      <h4 class="col col-20">Academic Year</h4>
+    </div> -->
+    <div class="container-fluid" style="margin-top: 10px">
+
+  <div class="table-row wrapper header">
+    <div class="wrapper text-4">
+    <div class="wrapper text-2">
+        <div align="left" class="pushleft text">Course Details
+        </div>
+    </div>
+    <hr>
+
+<!--    <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox">
+      <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
+        <div class="flex-container row wrap">
+          <div class="col col-10"><button class="button" ng-click="remove(course)"><i class="ion-ios-heart"></i></button></div>
+          <div class="col col-20">{{course.code}}</div>
+          <div class="col col-50">{{course.title}}</div>
+          <div class="col col-20">{{course.year}}</div>
+        </div>
+      </a>
+      <i class="icon ion-chevron-right icon-accessory"></i>
+    </div> -->
+    <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox">
+    <div class="text-right"><button class="button button-icon element2" ng-click="remove(course)"><i class="ion-ios-heart-outline"></i></button></div>
+    <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
+      <div class="table-row wrapper"></div>
+      <div class="wrapper text-4"></div>
+      <div class="wrapper text-2"></div>
+      <div align="left" class="element1" >{{course.code}}</div>
+      <div class="wrapper text-2"></div>
+      <div align="left" class="element1">{{course.title}}</div>
+      <div align="left" class="element1">{{course.year}}</div>
+</a>
+    </div>
+
   </ion-content>
 </ion-view>

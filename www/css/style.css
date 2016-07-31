@@ -49,13 +49,18 @@
  */
  .element1 {
   position: relative;
-  top: 80%;
-  transform: translateY(-80%);
+  top: 250%;
+  transform: translateY(-250%);
 }
 .element2 {
  position: relative;
- top: -50%;
- transform: translateY(50%);
+ top: -80%;
+ transform: translateY(80%);
+}
+.element3 {
+ position: relative;
+ top: -200%;
+ transform: translateY(200%);
 }
 .pushleft{
  margin-left: 2%;
@@ -64,6 +69,12 @@
 }
 .pushright{
   text-align:right;
+}
+
+.invisbutton {
+
+    background: transparent;
+    border: none !important;
 }
 @text-width: 180px;
 @num-width: 80px;

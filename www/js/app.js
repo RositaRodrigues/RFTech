@@ -85,6 +85,15 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
+  .state('app.forum', {
+    url: '/forum',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/forum.html',
+        controller: 'ForumCtrl'
+      }
+    }
+  })
   .state('app.mycourses', {
     url: '/mycourses',
     views: {
@@ -94,6 +103,17 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
+
+  .state('app.newThread', {
+    url: '/newThread',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/newThread.html',
+        controller: 'NewThreadCtrl'
+      }
+    }
+  })
+
   .state('app.results', {
     url: '/results',
     views: {

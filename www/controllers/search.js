@@ -4,7 +4,6 @@ angular.module('starter')
     loginData = university.getLoginData();
     university.getUniversity(loginData.univEmail).then(function(university) {
         $scope.university = university;
-        $scope.$apply();
     });
 
     // Get courses for autocomplete

@@ -11,7 +11,7 @@
 
         <div class="flex-container row wrap">
           <h2 class="col col-80">{{discussion.title}}
-            <p>
+            <p class="comment">
               {{discussion.description}}
             </p>
           </h2>
@@ -19,6 +19,7 @@
         </div>
 
         <div class="flex-container row wrap">
+           <i style="color:#2ecc71"class="ion-ios-person"> </i>
           <h3 class="col col-80">{{discussion.author}}</h3>
           <h4 class="col col-20">{{discussion.timeCreated}}<br>{{discussion.dateCreated}}</h4>
         </div>

@@ -4,25 +4,32 @@
 
     <ion-list class="item item-text-wrap">
       <div class="flex-container row wrap">
-        <h2 class="col col-80">{{discussion.title}}
-          <p>
+        <h2  class="col col-80">{{discussion.title}}
+          <p class="comment">
             {{discussion.description}}
           </p>
         </h2>
         <h3 class="col col-20">Posts: {{discussion.posts}}</h3>
       </div>
       <div class="flex-container row wrap">
+        <i style="color:#2ecc71"class="ion-ios-person"> </i>
         <h3 class="col col-80">{{discussion.author}}</h3>
         <h4 class="col col-20">{{discussion.timeCreated}},<br>{{discussion.dateCreated}}</h4>
       </div>
     </ion-list>
 
+<br>
     <hr>
-
+  
+     <div class="flex-container row wrap">
+        <i style="color:#2ecc71;margin-right:1.5%"class="ion-reply"> </i>
+        <p style="color:grey">Replies</p>
+      </div>
+  
     <ion-list class="item low-pad-item item-text-wrap" ng-repeat="followUp in followUps | filter:searchBox">
       <div class="flex-container row wrap">
-        <p class="col col-80">{{followUp.comment}}</p>
-        <h3 class="col col-20">
+        <p class="col col-80 comment">{{followUp.comment}}</p>
+        <h3 class="col col-20" "cursor:pointer;color:#2ecc71">
           {{followUp.upVotes}} <i style="cursor:pointer" class="ion-thumbsup" ng-click="thumbsUp()"></i> &nbsp <!-- arg: followUp.ID -->
           {{followUp.downVotes}} <i style="cursor:pointer" class="ion-thumbsdown" ng-click="thumbsDown()"></i><br>
         </h3>
@@ -31,6 +38,7 @@
 
       </div>
       <div class="flex-container row wrap">
+        <i style="color:#2ecc71"class="ion-ios-person"> </i>
         <h3 class="col col-80">{{followUp.author}}</h3>
         <h4 class="col col-20">{{followUp.timeCreated}},<br>{{followUp.dateCreated}}</h4>
       </div>

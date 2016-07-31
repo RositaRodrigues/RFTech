@@ -300,6 +300,14 @@ margin-top:2%;
   color: grey;
 
 }
+/*follow-ups*/
+
+h2.col.col-80.ng-binding {
+  
+    font-family: roboto;
+    font-weight: 900;
+    color: grey;
+}
 
 /* MyCourseMenu
 ==================================*/

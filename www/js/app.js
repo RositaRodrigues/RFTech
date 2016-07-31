@@ -76,6 +76,15 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
+  .state('app.forum', {
+    url: '/forum',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/forum.html',
+        controller: 'ForumCtrl'
+      }
+    }
+  })
   .state('app.mycourses', {
     url: '/mycourses',
     views: {
@@ -91,6 +100,15 @@ angular.module('starter', ['ionic', 'firebase'])
       'menuContent': {
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl'
+      }
+    }
+  })
+  .state('app.newThread', {
+    url: '/newThread',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/newThread.html',
+        controller: 'NewThreadCtrl'
       }
     }
   })
@@ -121,7 +139,7 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
-    .state('app.writeReview', {
+  .state('app.writeReview', {
     url: '/course=:coursecode&title=:coursetitle&year=:academicyear/writeReview',
     views: {
       'menuContent': {

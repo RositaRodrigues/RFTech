@@ -16,6 +16,7 @@ angular.module('starter')
       return loginData;
     },
     getUniversity: function(univEmail) {
+      console.log("univEmail: ", univEmail);
       var emailStringArray = univEmail.split("@");
       console.log("emailStringArray: ", emailStringArray);
       var domainStringLocation = emailStringArray.length - 1;

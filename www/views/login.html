@@ -1,4 +1,5 @@
 <ion-view view-title="Login" hide-nav-bar="true">
+
   <ion-content class="center" style="background: radial-gradient(transparent, black),url(img/uni.jpg) center; background-size: cover;">
 
    <!-- a consistent overlay -->
@@ -8,6 +9,7 @@
     ),url(img/uni.jpg) center; background-size: cover;"> -->
 
 
+  <!-- <ion-content class="center"> -->
     <!-- <form ng-submit="doLogin()">
       <div class="card" style="width: 300px">
         <label class="item item-input item-floating-label">
@@ -22,34 +24,23 @@
           <button class="button button-clear button-positive" type="submit">Log in</button>
         </label>
       </div>
+    </form>
     </form> -->
 
 
     <!-- <div class="hero no-header flat">
           <div class="content">
               <div class="app-icon"></div>
-             
+
           </div>
       </div> -->
       <h1 style="font-family:roboto;font-weight:800;
     top: 50%; text-align:center;color:white;margin-top: 34%;"> UNIFY </h1>
-     
-
    <form ng-submit="doLogin()">
-
   <input type="text" ng-model="loginData.univEmail" placeholder="University email" class="email">
-
-
   <input  type="password" ng-model="loginData.password" placeholder="Password" class="pass">
-
-
   <button  type="submit" style="background-color:#2ecc71"class="button button-full button-assertive">Login</button>
-
 </form>
-
-    
- 
-     
     <label ng-show="!userExists">{{loginError}}</label>
   </ion-content>
 </ion-view>

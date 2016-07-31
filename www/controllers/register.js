@@ -4,7 +4,7 @@ angular.module('starter')
   $scope.slideHasChanged = function($index){
     alert('slideHasChanged $index=' + $index);
     if($index === 0){
-      // first box
+      // firs1t box
     }
   };
 

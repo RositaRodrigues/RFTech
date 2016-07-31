@@ -1,4 +1,4 @@
-<ion-view view-title="Login" hide-nav-bar="true" class="pane">
+<ion-view view-title="Login" hide-nav-bar="true">
   <ion-content class="center">
     <form ng-submit="doLogin()">
       <div class="card" style="width: 300px">
@@ -15,20 +15,6 @@
         </label>
       </div>
     </form>
-
-
-
-
-
     <label ng-show="!userExists">{{loginError}}</label>
   </ion-content>
 </ion-view>
-
-<style type="text/css">
-.pane{
-background:url('img/uni.jpg') no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-}
-</style>

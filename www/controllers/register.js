@@ -15,12 +15,12 @@ angular.module('starter')
         var currentUser = {
           name: name,
           email: email,
-          university: university
+          university: university,
+          uid: user.uid
         };
         $rootScope.currentUser = currentUser;
         console.log("university in login is: " + university);
       });
-
       $ionicHistory.nextViewOptions({
          disableBack: true
       });
@@ -30,6 +30,7 @@ angular.module('starter')
       var errorMessage = error.message;
       alert(error);
     });
+
   };
 
 // .controller('RegisterCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate', function($scope, $state, $ionicSlideBoxDelegate) {

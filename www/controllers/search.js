@@ -7,9 +7,11 @@ angular.module('starter')
     //
     // });
     var currentUser = $rootScope.currentUser;
-    console.log("currentUser.name is: " + currentUser.name);
-    console.log("currentUser.email is: " + currentUser.email);
-    console.log("currentUser.uni is: " + currentUser.university);
+    console.log("currentUser.name is: " + $rootScope.currentUser.name);
+    console.log("currentUser.email is: " + $rootScope.currentUser.email);
+    console.log("currentUser.uni is: " + $rootScope.currentUser.university);
+    console.log("currentUser.uid is: " + $rootScope.currentUser.uid);
+
     $scope.university = currentUser.university;
     // Get courses for autocomplete
     $scope.courses = Database.getCourses();

@@ -1,5 +1,5 @@
 angular.module('starter')
-  .controller('WriteReviewCtrl', function($scope, $rootScope, $stateParams) {
+  .controller('WriteReviewCtrl', function($scope, $rootScope, $stateParams, $state) {
     $scope.courseCode = $stateParams.coursecode;
     $scope.courseTitle = $stateParams.coursetitle;
     $scope.academicYear = $stateParams.academicyear;
@@ -25,7 +25,6 @@ angular.module('starter')
       console.log(newReview);
 
       firebase.database().ref(user.university+'/reviews/'+$scope.courseCode).push(newReview);
-
 
     }
   })

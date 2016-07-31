@@ -1,5 +1,5 @@
 angular.module('starter')
-  .controller('ReviewsCtrl', function($scope, $stateParams, Database) {
+  .controller('ReviewsCtrl', function($scope, $rootScope, $stateParams, Database) {
     $scope.courseCode = $stateParams.coursecode;
     $scope.courseTitle = $stateParams.coursetitle;
     $scope.academicYear = $stateParams.academicyear;
@@ -9,12 +9,20 @@ angular.module('starter')
     // firebase.database().ref('reviews/'+$scope.courseCode).push(angular.copy(Database.getReview2()));
 
     $scope.reviews = [];
-    firebase.database().ref('reviews/'+$scope.courseCode).once('value').then(function(snapshot) {
+    firebase.database().ref($rootScope.currentUser.university+'/reviews/'+$scope.courseCode).once('value').then(function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
         $scope.reviews.push(childSnapshot.val());
       });
     });
 
+    $scope.refresh = function() {
+      $scope.reviews = [];
+      firebase.database().ref($rootScope.currentUser.university+'/reviews/'+$scope.courseCode).once('value').then(function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+          $scope.reviews.push(childSnapshot.val());
+        });
+      });
+    }
 
     $scope.needsFullStar = function(number, rating) {
       return number <= rating;

@@ -1,10 +1,14 @@
 <ion-view view-title="{{courseCode}} {{courseTitle}} {{academicYear}}">
   <ion-content>
-    <h4 class="subtitle padding-right">Reviews
+    <h4 class="subtitle padding-right padding-left">Reviews
+      <a class="button button-small button-dark" style="float: left;" ng-click="refresh()">
+        Refresh
+      </a>
       <a class="button button-small button-dark" style="float: right;" href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/writeReview">
         Write a Review
-      </a></h4>
-     <br>
+      </a>
+    </h4>
+    <br>
     <ion-list class="item low-pad-item item-text-wrap" ng-repeat="review in reviews | filter:searchBox">
       <div class="flex-container row wrap">
         <h2 class="col col-75">{{review.title}}
@@ -23,8 +27,6 @@
       <div class="flex-container row wrap">
         <h3 class="col col-75">{{review.author}}</h3>
         <h4 class="col col-25">{{review.timeCreated}}<br>{{review.dateCreated}}</h4>
-        <!-- <h4 class="col col-25">{{review.timeCreated}}, 26/03/14</h4> -->
-
       </div>
     </ion-list>
   </ion-content>

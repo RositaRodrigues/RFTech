@@ -85,6 +85,15 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
+  .state('app.forum', {
+    url: '/course=:coursecode&title=:coursetitle&year=:academicyear/forum',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/forum.html',
+        controller: 'ForumCtrl'
+      }
+    }
+  })
   .state('app.mycourses', {
     url: '/mycourses',
     views: {

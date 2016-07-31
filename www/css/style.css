@@ -144,7 +144,9 @@ body {
 }
 
 .card .item{
-  background-color: #08AE9E;
+  /*background-color: #08AE9E;*/
+  /*background-color: #0a94c2;*/
+  background-color: white;
 }
 
 a:link, a:visited, a:hover, a:active  {

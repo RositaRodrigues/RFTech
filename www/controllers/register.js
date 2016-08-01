@@ -1,6 +1,14 @@
 angular.module('starter')
 .controller('RegisterCtrl', function($scope, $ionicHistory, universityLogin, $rootScope, $state) {
 
+
+  $scope.slideHasChanged = function($index){
+    alert('slideHasChanged $index=' + $index);
+    if($index === 0){
+      // firs1t box
+    }
+  };
+
   $scope.register = function(name, email, password) {
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
       var user = firebase.auth().currentUser;
@@ -14,6 +22,7 @@ angular.module('starter')
         };
         firebase.database().ref('users/'+user.uid).set(currentUser);
         $rootScope.currentUser = currentUser;
+
 
         $ionicHistory.nextViewOptions({
           disableBack: true

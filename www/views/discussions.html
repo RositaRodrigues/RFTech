@@ -1,12 +1,13 @@
 <ion-view view-title="{{courseTitle}}">
   <ion-content>
     <h4 class="subtitle padding-right padding-left">Discussions
-      <a class="button button-small button-dark" style="float: left;" ng-click="refresh()">
+      <a class="button button-small ion-android-refresh button-dark" style="float: left;element3" ng-click="refresh()">
         Refresh
       </a>
-      <a class="button button-small button-dark" style="float: right; element3" href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/createDiscussion">
+      <a class="button button-small ion-chatbubbles button-dark " style="float: right;element3" href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/createDiscussion">
         New Discussion
-      </a></h4>
+      </a>
+    </h4>
     <br>
 
     <ion-list class="item low-pad-item item-icon-right" ng-repeat="discussion in discussions">
@@ -14,7 +15,7 @@
 
         <div class="flex-container row wrap">
           <h2 class="col col-80">{{discussion.title}}
-            <p>
+            <p class="comment">
               {{discussion.description}}
             </p>
           </h2>
@@ -22,6 +23,7 @@
         </div>
 
         <div class="flex-container row wrap">
+           <i style="color:#2ecc71"class="ion-ios-person"> </i>
           <h3 class="col col-80">{{discussion.author}}</h3>
           <h4 class="col col-20">{{discussion.timeCreated}}<br>{{discussion.dateCreated}}</h4>
         </div>

@@ -5,16 +5,20 @@ angular.module('starter')
     $scope.academicYear = $stateParams.academicyear;
 
     $scope.input = {}
+    $scope.userName = $rootScope.currentUser.name;
 
-    $scope.postReview = function() {
+    $scope.postReviewAsAnonymous = function(postAsAnonymous) {
       var date = new Date();
       var min = date.getMinutes();
       var currentTime = date.getHours() + ':' + (min<10?'0'+min:min);
       var currentDate = date.getDate() +'/'+ (date.getMonth()+1) + '/' + date.getFullYear();
       var user = $rootScope.currentUser;
-
+      var author = user.name;
+      if (postAsAnonymous) {
+        author = "Anonymous";
+      }
       var newReview = {
-        author: user.name,
+        author: author,
         dateCreated: currentDate,
         comment: $scope.input.comment,
         timeCreated: currentTime,

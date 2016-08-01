@@ -20,16 +20,20 @@ angular.module('starter')
 
     // Post follow up
     $scope.input = {}
+    $scope.userName = $rootScope.currentUser.name;
 
-    $scope.postFollowUp = function() {
+    $scope.postFollowUpAsAnonymous = function(postAsAnonymous) {
       var date = new Date();
       var min = date.getMinutes();
       var currentTime = date.getHours() + ':' + (min<10?'0'+min:min);
       var currentDate = date.getDate() +'/'+ (date.getMonth()+1) + '/' + date.getFullYear();
       var user = $rootScope.currentUser;
-
+      var author = user.name;
+      if (postAsAnonymous) {
+        author = "Anonymous";
+      }
       var newFollowUp = {
-        author: user.name,
+        author: author,
         comment: $scope.input.comment,
         dateCreated: currentDate,
         downVotes: 0,

@@ -12,20 +12,24 @@
       </label>
     </div>
 
-    <!-- Post as Anonymous option here -->
-    <label class="item-input item-select" style="padding-left:0px">
-      <div class="input-label">Post as</div>
-      <select>
-        <option selected>Name</option>
-        <option>Anonymous</option>
-      </select>
-    </label>
     <br><br>
+    <!-- <label class="item-input item-select" style="padding-left:0px"> -->
+      <div class="padding-right padding-left">
+        <button class="button button-small button-dark" style="float: left;element3" ng-click="postDiscussionAsAnonymous(false)">
+          Post as {{userName}}
+        </button>
+        <button class="button button-small button-dark" style="float: right;element3" ng-click="postDiscussionAsAnonymous(true)">
+          Post as Anonymous
+        </button>
+      </div>
+    <!-- </label> -->
+
+    <!-- <br><br>
     <div class="centred-button">
       <button class="button button-large button-dark" style="text-align: center;" ng-click="postDiscussion()">
         Post Discussion
       </button>
-    </div>
+    </div> -->
 
   </ion-content>
 </ion-view>

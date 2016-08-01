@@ -8,6 +8,12 @@ angular.module('starter', ['ionic', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
+    //hide the status bar using the StatusBar plugin
+    if(window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.hide();
+      ionic.Platform.fullScreen();
+    }
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {

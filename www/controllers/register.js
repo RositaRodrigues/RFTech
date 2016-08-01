@@ -9,7 +9,7 @@ angular.module('starter')
         var currentUser = {
           name: name,
           email: email,
-          myCourses: [],
+          // myCourses: [],
           university: university,
           uid: user.uid
         };

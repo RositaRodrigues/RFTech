@@ -12,7 +12,7 @@
       </div>
 
       <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox" ng-show="searchBox.length">
-        <div class="text-right"><button class="button button-icon element2" ng-click="remove(course)"><i class="ion-ios-heart-outline"></i></button></div>
+        <div class="text-right"><button class="button button-icon element2" ng-click="add(course)"><i class="ion-ios-heart-outline"></i></button></div>
         <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
           <div class="table-row wrapper"></div>
           <div class="wrapper text-4"></div>

@@ -2,65 +2,67 @@
   <ion-content>
     <hr>
 
+    <!-- Display original discussion post in full -->
     <ion-list class="item item-text-wrap">
       <div class="flex-container row wrap">
-        <h2 class="col col-80">{{forum.title}}
-          <p>
+        <h2  class="col col-80">{{forum.title}}
+          <p class="comment">
             {{forum.description}}
           </p>
         </h2>
         <h3 class="col col-20">Posts: {{forum.posts}}</h3>
       </div>
       <div class="flex-container row wrap">
+        <i style="color:#2ecc71"class="ion-ios-person"> </i>
         <h3 class="col col-80">{{forum.author}}</h3>
         <h4 class="col col-20">{{forum.timeCreated}},<br>{{forum.dateCreated}}</h4>
       </div>
     </ion-list>
 
     <br>
-        <hr>
+    <hr>
 
-        <!-- List all replies of this thread -->
+    <!-- List all replies of this thread -->
 
-         <div class="flex-container row wrap">
-            <i style="color:#2ecc71;margin-right:1.5%"class="ion-reply"> </i>
-            <p style="color:grey">Replies</p>
-          </div>
+     <div class="flex-container row wrap">
+        <i style="color:#2ecc71;margin-right:1.5%"class="ion-reply"> </i>
+        <p style="color:grey">Replies</p>
+      </div>
 
-        <ion-list class="item low-pad-item item-text-wrap" ng-repeat="reply in replies | filter:searchBox">
-          <div class="flex-container row wrap">
-            <p class="col col-80 comment">{{reply.comment}}</p>
-            <h3 class="col col-20" "cursor:pointer;color:#2ecc71">
-              {{reply.upVotes}} <i style="cursor:pointer;color:#2ecc71" class="ion-thumbsup" ng-click="thumbsUp(reply)"></i> &nbsp <!-- arg: followUp.ID -->
-              {{reply.downVotes}} <i style="cursor:pointer;color:red" class="ion-thumbsdown" ng-click="thumbsDown(reply)"></i><br>
-            </h3>
-          </div>
-          <div>
+    <ion-list class="item low-pad-item item-text-wrap" ng-repeat="reply in replies | filter:searchBox">
+      <div class="flex-container row wrap">
+        <p class="col col-80 comment">{{reply.comment}}</p>
+        <h3 class="col col-20" "cursor:pointer;color:#2ecc71">
+          {{reply.upVotes}} <i style="cursor:pointer;color:#2ecc71" class="ion-thumbsup" ng-click="thumbsUp(reply)"></i> &nbsp <!-- arg: followUp.ID -->
+          {{reply.downVotes}} <i style="cursor:pointer;color:red" class="ion-thumbsdown" ng-click="thumbsDown(reply)"></i><br>
+        </h3>
+      </div>
+      <div>
 
-          </div>
-          <div class="flex-container row wrap">
-            <i style="color:#2ecc71"class="ion-ios-person"> </i>
-            <h3 class="col col-80">{{reply.author}}</h3>
-            <h4 class="col col-20">{{reply.timeCreated}},<br>{{reply.dateCreated}}</h4>
-          </div>
-        </ion-list>
+      </div>
+      <div class="flex-container row wrap">
+        <i style="color:#2ecc71"class="ion-ios-person"> </i>
+        <h3 class="col col-80">{{reply.author}}</h3>
+        <h4 class="col col-20">{{reply.timeCreated}},<br>{{reply.dateCreated}}</h4>
+      </div>
+    </ion-list>
 
-        <hr>
+    <hr>
 
-        <!-- Create new reply -->
-        <label class="item item-input item-stacked-label">
-          <span class="input-label">Post Reply</span>
-          <input type="text" placeholder="Comment" ng-model="input.comment">
-        </label>
+    <!-- Create new reply -->
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Post Reply</span>
+      <input type="text" placeholder="Comment" ng-model="input.comment">
+    </label>
 
-        <div class="padding-right padding-left">
-          <button class="button button-small button-dark" style="float: left;element3" ng-click="postReplyAsAnonymous(false)">
-            Post as {{userName}}
-          </button>
-          <button class="button button-small button-dark" style="float: right;element3" ng-click="postReplyAsAnonymous(true)">
-            Post as Anonymous
-          </button>
-        </div>
+    <div class="padding-right padding-left">
+      <button class="button button-small button-dark" style="float: left;element3" ng-click="postReplyAsAnonymous(false)">
+        Post as {{userName}}
+      </button>
+      <button class="button button-small button-dark" style="float: right;element3" ng-click="postReplyAsAnonymous(true)">
+        Post as Anonymous
+      </button>
+    </div>
 
 
   </ion-content>

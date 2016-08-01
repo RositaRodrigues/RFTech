@@ -12,16 +12,4 @@ angular.module('starter')
         $scope.discussions.push(discussion);
       });
     });
-
-    $scope.refresh = function() {
-      $scope.discussions = [];
-      firebase.database().ref($rootScope.currentUser.university+'/discussions/'+$scope.courseCode).once('value').then(function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
-          var discussion = childSnapshot.val();
-          discussion.ID = childSnapshot.key;
-          $scope.discussions.push(discussion);
-        });
-      });
-    }
-
   });

@@ -11,8 +11,13 @@
   text-align: center;
 }
 
+
 .date {
     margin-left: 38%;
+
+.btn {
+  width: 355px;
+  height: 50px;
 }
 
 
@@ -143,11 +148,11 @@
 
 }
 
- 
+
 .custom {
   background-color: #3f4041 !important; /* This sets the background color*/
  }
- 
+
 /*Set the background to transparent for ion-item*/
 .custom .item {
   background-color: transparent;
@@ -157,16 +162,16 @@
   border-color: #666;   /*Sets colors for top and bottom border*/
   color: white;    /*Text color for each item*/
 }
- 
+
 /*Changes the border for the last item*/
 .custom .item:last-child {
   border-bottom: 1px solid #666;
 }
- 
+
 .custom .item-complex .item-content, .dark .item-radio .item-content {
   background-color: transparent;
 }
- 
+
 /*Just makes the type white*/
 .custom h2,
 .custom h3,
@@ -318,7 +323,7 @@ h1 {
 .scroll {
     height: 50%;
 }
-/* Reviews page styling 
+/* Reviews page styling
 ==================================*/
 h2.col.col-75.title.ng-binding{
   font-family: roboto;
@@ -341,7 +346,7 @@ margin-top:2%;
 /*follow-ups*/
 
 h2.col.col-80.ng-binding {
-  
+
     font-family: roboto;
     font-weight: 900;
     color: grey;

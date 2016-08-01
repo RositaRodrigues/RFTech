@@ -1,17 +1,17 @@
-<ion-view view-title="Forum">
+<ion-view view-title="Forum" cache-view="false">
   <ion-content>
     <h4 class="subtitle padding-right">Forum
-      <a class="button button-small button-dark" style="float: right; element3" href="#/app/newThread">
+      <a class="button button-small ion-chatboxes button-dark" style="float: right; element3" href="#/app/newThread">
         Start New Thread
       </a></h4>
     <br>
 
-    <ion-list class="item low-pad-item item-icon-right" ng-repeat="thread in forum">
+    <ion-list class="item low-pad-item item-icon-right" ng-repeat="forum in forums">
       <a href="#/app/forum={{forum.ID}}">
 
         <div class="flex-container row wrap">
           <h2 class="col col-80">{{forum.title}}
-            <p>
+            <p class="comment">
               {{forum.description}}
             </p>
           </h2>
@@ -19,6 +19,7 @@
         </div>
 
         <div class="flex-container row wrap">
+          <i style="color:#2ecc71"class="ion-ios-person"> </i>
           <h3 class="col col-80">{{forum.author}}</h3>
           <h4 class="col col-20">{{forum.timeCreated}}<br>{{forum.dateCreated}}</h4>
         </div>

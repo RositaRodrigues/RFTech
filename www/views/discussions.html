@@ -1,15 +1,14 @@
-<ion-view view-title="{{courseTitle}}">
+<ion-view view-title="{{courseTitle}}" cache-view="false">
   <ion-content>
+
     <h4 style="font-size: 20px;
     font-weight: 300;
     text-align: center;"class=" padding-right padding-left">Discussions
-      <a class="button button-small ion-android-refresh button-dark" style="float: left;element3" ng-click="refresh()">
-        Refresh
-      </a>
+     
       <a class="button button-small ion-chatbubbles button-dark " style="font-size:12px; float: right;element3" href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/createDiscussion">
+
         New Discussion
-      </a>
-    </h4>
+      </a></h4>
     <br>
 
     <ion-list class="item low-pad-item item-icon-right" ng-repeat="discussion in discussions |  orderBy:'dateCreated'">

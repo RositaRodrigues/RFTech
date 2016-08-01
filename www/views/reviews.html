@@ -1,9 +1,6 @@
-<ion-view view-title="{{courseCode}} {{courseTitle}} {{academicYear}}">
+<ion-view view-title="{{courseCode}} {{courseTitle}} {{academicYear}}" cache-view="false">
   <ion-content>
     <h4 class="subtitle padding-right padding-left">Reviews
-      <a class="button button-small ion-android-refresh button-dark" style="float: left;" ng-click="refresh()">
-        Refresh
-      </a>
       <a class="button button-small ion-android-create button-dark" style="float: right;" href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/writeReview">
         Write a Review
       </a>

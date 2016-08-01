@@ -28,6 +28,6 @@ angular.module('starter')
       }
 
       firebase.database().ref(user.university+'/reviews/'+$scope.courseCode).push(newReview);
-
+      window.history.back();
     }
   })

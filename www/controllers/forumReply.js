@@ -1,5 +1,5 @@
 angular.module('starter')
-  .controller('ForumReplyCtrl', function($scope, $stateParams, Database) {
+  .controller('ForumReplyCtrl', function($scope, $stateParams) {
 
     var threadID = $stateParams.ID;
 /*
@@ -13,7 +13,7 @@ angular.module('starter')
         $scope.forumReply.push(childSnapshot.val());
       });
     });
-  */  
+  */
     $scope.thumbsUp = function() {
       window.alert("Like!");
     };

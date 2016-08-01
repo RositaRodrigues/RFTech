@@ -22,7 +22,6 @@ angular.module('starter')
             posts: 0,
             uid: user.uid
           }
-          console.log(newDiscussion);
 
           firebase.database().ref(user.university+'/discussions/'+$scope.courseCode).push(newDiscussion);
         }

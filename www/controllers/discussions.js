@@ -1,5 +1,5 @@
 angular.module('starter')
-  .controller('DiscussionsCtrl', function($scope, $rootScope, $stateParams, Database) {
+  .controller('DiscussionsCtrl', function($scope, $rootScope, $stateParams) {
     $scope.courseCode = $stateParams.coursecode;
     $scope.courseTitle = $stateParams.coursetitle;
     $scope.academicYear = $stateParams.academicyear;
@@ -12,7 +12,7 @@ angular.module('starter')
         $scope.discussions.push(discussion);
       });
     });
-    
+
     $scope.refresh = function() {
       $scope.discussions = [];
       firebase.database().ref($rootScope.currentUser.university+'/discussions/'+$scope.courseCode).once('value').then(function(snapshot) {

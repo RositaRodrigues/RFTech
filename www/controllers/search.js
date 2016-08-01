@@ -1,9 +1,14 @@
 angular.module('starter')
-.controller('SearchCtrl', ['$scope', '$stateParams', 'universityLogin', 'Database', '$rootScope', function($scope, $stateParams, university, Database, $rootScope) {
+.controller('SearchCtrl', ['$scope', '$stateParams', 'universityLogin', '$rootScope', function($scope, $stateParams, university, $rootScope) {
 
   var currentUser = $rootScope.currentUser;
-
   $scope.university = currentUser.university;
-  // Get courses for autocomplete
-  $scope.courses = Database.getCourses();
+  
+  $scope.courses = [];
+  firebase.database().ref(currentUser.university+'/courses').once('value').then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var course = childSnapshot.val();
+      $scope.courses.push(course);
+    });
+  });
 }]);

@@ -1,5 +1,5 @@
 angular.module('starter')
-  .controller('FollowUpsCtrl', function($scope, $rootScope, $stateParams, Database) {
+  .controller('FollowUpsCtrl', function($scope, $rootScope, $stateParams) {
     $scope.courseCode = $stateParams.coursecode;
     $scope.courseTitle = $stateParams.coursetitle;
     $scope.academicYear = $stateParams.academicyear;
@@ -37,7 +37,6 @@ angular.module('starter')
         uid: user.uid,
         upVotes: 0
       }
-      console.log(newFollowUp);
 
       firebase.database().ref(user.university+'/followUps/'+$scope.courseCode+'/'+discussionID).push(newFollowUp);
       $scope.followUps.push(newFollowUp);

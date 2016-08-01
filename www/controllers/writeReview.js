@@ -22,7 +22,6 @@ angular.module('starter')
         rating: $scope.input.rating,
         uid: user.uid
       }
-      console.log(newReview);
 
       firebase.database().ref(user.university+'/reviews/'+$scope.courseCode).push(newReview);
 

@@ -1,42 +1,29 @@
 <ion-view view-title="Search">
-
-
   <ion-content>
 
     <div class="item text-wrap univ-name">
-      <img src="img/icon1.png">{{university}}</div>
+      <img src="img/icon1.png"> {{university}}</div>
 
-    <div class="list list-inset">
-      <label class="item item-input">
-        <i class="icon ion-search placeholder-icon"></i>
-        <input class="input-field" id="search" type="text" ng-model="searchBox" placeholder="Search courses">
-      </label>
-    </div>
-<!--
-    <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox" ng-show="searchBox.length">
-      <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
-        <div class="flex-container row wrap">
-          <div class="col col-20">{{course.code}}</div>
-          <div class="col col-50">{{course.title}}</div>
-        </div>
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input class="input-field" id="search" type="text" ng-model="searchBox" placeholder="Search courses">
+        </label>
+      </div>
 
-      </a>
-      <i class="icon ion-chevron-right icon-accessory"></i>
-    </div>
-  -->
-  <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox" ng-show="searchBox.length">
-  <div class="text-right"><button class="button button-icon element2" ng-click="remove(course)"><i class="ion-ios-heart-outline"></i></button></div>
-  <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
-    <div class="table-row wrapper"></div>
-    <div class="wrapper text-4"></div>
-    <div class="wrapper text-2"></div>
-    <div align="left" class="element1" >{{course.code}}</div>
-    <div class="wrapper text-2"></div>
-    <div align="left" class="element1">{{course.title}}</div>
-    <div align="left" class="element1">{{course.year}}</div>
-</a>
-  </div>
+      <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox" ng-show="searchBox.length">
+        <div class="text-right"><button class="button button-icon element2" ng-click="remove(course)"><i class="ion-ios-heart-outline"></i></button></div>
+        <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
+          <div class="table-row wrapper"></div>
+          <div class="wrapper text-4"></div>
+          <div class="wrapper text-2"></div>
+          <div align="left" class="element1" >{{course.code}}</div>
+          <div class="wrapper text-2"></div>
+          <div align="left" class="element1">{{course.title}}</div>
+          <div align="left" class="element1">{{course.year}}</div>
+        </a>
+      </div>
 
 
-  </ion-content>
-</ion-view>
+    </ion-content>
+  </ion-view>

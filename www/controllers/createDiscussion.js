@@ -1,5 +1,5 @@
 angular.module('starter')
-  .controller('CreateDiscussionCtrl', function($scope, $rootScope, $stateParams) {
+  .controller('CreateDiscussionCtrl', function($scope, $rootScope, $stateParams, $state) {
     $scope.courseCode = $stateParams.coursecode;
     $scope.courseTitle = $stateParams.coursetitle;
     $scope.academicYear = $stateParams.academicyear;
@@ -28,5 +28,6 @@ angular.module('starter')
       }
 
       firebase.database().ref(user.university+'/discussions/'+$scope.courseCode).push(newDiscussion);
+      window.history.back();
     }
   });

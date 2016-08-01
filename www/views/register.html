@@ -1,16 +1,59 @@
 <ion-view view-title="Register" hide-nav-bar="true">
-  <ion-content>
-    <ion-slide-box on-slide-changed="slideHasChanged($index)">
-  <ion-slide>
-    <div class="box blue"><h1>BLUE</h1></div>
-  </ion-slide>
-  <ion-slide>
-    <div class="box yellow"><h1>YELLOW</h1></div>
-  </ion-slide>
-  <ion-slide>
-    <div class="box pink"><h1>PINK</h1></div>
-  </ion-slide>
-</ion-slide-box>
+  <ion-content class="center">
 
+    <div class="card" style="width: 300px">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Name</span>
+        <input type="text" ng-model="name" placeholder="Name">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">University email</span>
+        <input type="text" ng-model="email" placeholder="University Email">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Password</span>
+        <input type="password" ng-model="password" placeholder="Password">
+      </label>
+      <label class="item center">
+        <button class="button button-dark" ng-click="register(name, email, password)">Register</button>
+      </label>
+      <label class="item center">
+        <small>Already have an account?</small>
+      </label>
+      <a href="#/app/login">
+        <label class="item center">
+          <button class="button button-dark">Login Here</button>
+        </label>
+      </a>
+    </div>
+
+    <!-- <form ng-submit="doLogin()">
+      <div class="card" style="width: 300px">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">University email</span>
+          <input type="text" ng-model="loginData.univEmail" placeholder="University email">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="loginData.password" placeholder="Password">
+        </label>
+        <label class="item center">
+          <button class="button button-clear button-positive" type="submit">Log in</button>
+        </label>
+      </div>
+    </form>
+    <label ng-show="!userExists">{{loginError}}</label> -->
+<!--
+    <ion-slide-box on-slide-changed="slideHasChanged($index)">
+      <ion-slide>
+        <div class="box blue"><h1>BLUE</h1></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box yellow"><h1>YELLOW</h1></div>
+      </ion-slide>
+      <ion-slide>
+        <div class="box pink"><h1>PINK</h1></div>
+      </ion-slide>
+    </ion-slide-box> -->
   </ion-content>
 </ion-view>

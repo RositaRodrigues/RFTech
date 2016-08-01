@@ -7,33 +7,18 @@
       </label>
     </div>
 
-    <hr>
-  <!--  <div class="table-row row wrap">
-      <h4 class="col col-10"></h4>
-      <h4 class="col col-20">Course Code</h4>
-      <h4 class="col col-50">Course Title</h4>
-      <h4 class="col col-20">Academic Year</h4>
-    </div> -->
-    <div class="container-fluid" style="margin-top: 10px">
+    <hr></hr>
+    <div class="container-fluid" style="margin-bottom: 10px"></div>
 
   <div class="table-row wrapper header">
     <div class="wrapper text-4">
     <div class="wrapper text-2">
+
         <div align="left" style="font-family:roboto;font-weight:600;color:grey" class="pushleft text"> Course Details</div>
+
     </div>
     <hr>
 
-<!--    <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox">
-      <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
-        <div class="flex-container row wrap">
-          <div class="col col-10"><button class="button" ng-click="remove(course)"><i class="ion-ios-heart"></i></button></div>
-          <div class="col col-20">{{course.code}}</div>
-          <div class="col col-50">{{course.title}}</div>
-          <div class="col col-20">{{course.year}}</div>
-        </div>
-      </a>
-      <i class="icon ion-chevron-right icon-accessory"></i>
-    </div> -->
     <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox">
     <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
       <div class="text-right"><button class="button button-icon element2" ng-click="remove(course)"><i style="color:#2ecc71"class="ion-ios-heart"></i></button></div>

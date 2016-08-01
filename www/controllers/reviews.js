@@ -15,10 +15,6 @@ angular.module('starter')
       });
     });
 
-    // firebase.database().ref('reviews/'+$scope.courseCode).on('child_added', function(data) {
-    //     console.log(data.val());
-    //     $scope.reviews.push(data.val());
-    // });
 
     $scope.needsFullStar = function(number, rating) {
       return number <= rating;

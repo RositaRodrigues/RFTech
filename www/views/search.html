@@ -12,7 +12,7 @@
         <input class="input-field" id="search" type="text" ng-model="searchBox" placeholder="Search courses">
       </label>
     </div>
-
+<!--
     <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox" ng-show="searchBox.length">
       <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
         <div class="flex-container row wrap">
@@ -23,5 +23,20 @@
       </a>
       <i class="icon ion-chevron-right icon-accessory"></i>
     </div>
+  -->
+  <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox" ng-show="searchBox.length">
+  <div class="text-right"><button class="button button-icon element2" ng-click="remove(course)"><i class="ion-ios-heart-outline"></i></button></div>
+  <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
+    <div class="table-row wrapper"></div>
+    <div class="wrapper text-4"></div>
+    <div class="wrapper text-2"></div>
+    <div align="left" class="element1" >{{course.code}}</div>
+    <div class="wrapper text-2"></div>
+    <div align="left" class="element1">{{course.title}}</div>
+    <div align="left" class="element1">{{course.year}}</div>
+</a>
+  </div>
+
+
   </ion-content>
 </ion-view>

@@ -31,24 +31,6 @@ angular.module('starter', ['ionic', 'firebase'])
     templateUrl: 'views/menu.html',
     controller: 'MenuCtrl'
   })
-  .state('app.register', {
-    url: '/register',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/register.html',
-        controller: 'RegisterCtrl'
-      }
-    }
-  })
-  .state('app.login', {
-    url: '/login',
-    views: {
-      'menuContent': {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
-      }
-    }
-  })
   .state('app.coursemenu', {
     url: '/course=:coursecode&title=:coursetitle&year=:academicyear/coursemenu',
     views: {
@@ -85,6 +67,24 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
+  .state('app.login', {
+    url: '/login',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+      }
+    }
+  })
+  .state('app.forum', {
+    url: '/forum',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/forum.html',
+        controller: 'ForumCtrl'
+      }
+    }
+  })
   .state('app.mycourses', {
     url: '/mycourses',
     views: {
@@ -94,15 +94,25 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
-  .state('app.results', {
-    url: '/results',
+  .state('app.register', {
+    url: '/register',
     views: {
       'menuContent': {
-        templateUrl: 'views/results.html',
-        controller: 'ResultsCtrl'
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl'
       }
     }
   })
+  .state('app.newThread', {
+    url: '/newThread',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/newThread.html',
+        controller: 'NewThreadCtrl'
+      }
+    }
+  })
+  
   .state('app.reviews', {
     url: '/course=:coursecode&title=:coursetitle&year=:academicyear/reviews',
     views: {
@@ -121,7 +131,7 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
-    .state('app.writeReview', {
+  .state('app.writeReview', {
     url: '/course=:coursecode&title=:coursetitle&year=:academicyear/writeReview',
     views: {
       'menuContent': {

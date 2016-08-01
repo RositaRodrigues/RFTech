@@ -1,10 +1,12 @@
 <ion-view view-title="{{courseTitle}}">
   <ion-content>
     <h4 class="subtitle padding-right">Discussions
-      <a class="button button-small ion-chatbubbles button-dark " style="float: right;" href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/createDiscussion">
+
+      <a class="button button-small ion-chatbubbles button-dark " style="float: right;element3" href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/createDiscussion">
+
         New Discussion
-      </a>
-    </h4><br>
+      </a></h4>
+    <br>
 
     <ion-list class="item low-pad-item item-icon-right" ng-repeat="discussion in discussions">
       <a href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/discussion={{discussion.ID}}">
@@ -25,7 +27,7 @@
         </div>
 
       </a>
-      <i class="icon ion-chevron-right icon-accessory"></i>
+    
     </ion-list>
   </ion-content>
 </ion-view>

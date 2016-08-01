@@ -60,7 +60,7 @@ angular.module('starter', ['ionic', 'firebase'])
   })
 
   .state('app.forumReply', {
-    url: '/forumReply',
+    url: '/forum=:forumID',
     views: {
       'menuContent': {
         templateUrl: 'views/forumReply.html',

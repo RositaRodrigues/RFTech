@@ -1,30 +1,27 @@
 <ion-view view-title="Register" hide-nav-bar="true">
-  <ion-content class="center">
+   <ion-content class="center" style="background: radial-gradient(transparent, black),url(img/uni.jpg) center; background-size: cover;">
 
-    <div class="card" style="width: 300px">
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Name</span>
-        <input type="text" ng-model="name" placeholder="Name">
-      </label>
-      <label class="item item-input item-floating-label">
-        <span class="input-label">University Email</span>
-        <input type="text" ng-model="email" placeholder="University Email">
-      </label>
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Password</span>
-        <input type="password" ng-model="password" placeholder="Password">
-      </label>
-      <label class="item center">
-        <button class="button button-dark" ng-click="register(name, email, password)">Register</button>
-      </label>
-      <label class="item center">
-        <small>Already have an account?</small>
-      </label>
+
+<h1 style="font-family:roboto;font-weight:800; top: 50%; text-align:center;color:white;margin-top: 34%;"> UNIFY </h1>
+   
+    <form>
+
+      <input type="text" ng-model="name" placeholder="Name" class="n-style">
+      <input type="text" ng-model="email" placeholder="University Email" class="email">
+      <input type="password" ng-model="password" placeholder="Password" class="pass">
+
+      <button class="button button-full button-assertive" style="background-color:#2ecc71" ng-click="register(name, email, password)">Register</button>
+
+      <div  class="item center login-label">
+        <small style="color:white;font-family:roboto;font-weight:300 ">Already have an account?</small>
+      </div>
+
       <a href="#/app/login">
-        <label class="item center">
           <button class="button button-dark">Login Here</button>
-        </label>
       </a>
-    </div>
+
+  </form>
+
+
   </ion-content>
 </ion-view>

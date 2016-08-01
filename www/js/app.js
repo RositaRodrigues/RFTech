@@ -58,6 +58,16 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
+
+  .state('app.forumReply', {
+    url: '/forumReply',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/forumReply.html',
+        controller: 'ForumReplyCtrl'
+      }
+    }
+  })
   .state('app.discussions', {
     url: '/course=:coursecode&title=:coursetitle&year=:academicyear/discussions',
     views: {
@@ -112,7 +122,7 @@ angular.module('starter', ['ionic', 'firebase'])
       }
     }
   })
-  
+
   .state('app.reviews', {
     url: '/course=:coursecode&title=:coursetitle&year=:academicyear/reviews',
     views: {

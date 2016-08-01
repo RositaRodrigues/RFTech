@@ -52,7 +52,7 @@ angular.module('starter')
       firebase.database().ref($rootScope.currentUser.university+'/forumReplies/'+forumID+'/'+reply.ID).once('value').then(function(snapshot) {
         var newVote = snapshot.val().upVotes + 1;
         firebase.database().ref($rootScope.currentUser.university+'/forumReplies/'+forumID+'/'+reply.ID+'/').update({upVotes: newVote});
-        followUp.upVotes++;
+        reply.upVotes++;
       });
 
       window.alert("Like!");
@@ -63,7 +63,7 @@ angular.module('starter')
       firebase.database().ref($rootScope.currentUser.university+'/forumReplies/'+forumID+'/'+reply.ID).once('value').then(function(snapshot) {
         var newVote = snapshot.val().downVotes + 1;
         firebase.database().ref($rootScope.currentUser.university+'/forumReplies/'+forumID+'/'+reply.ID+'/').update({upVotes: newVote});
-        followUp.downVotes++;
+        reply.downVotes++;
       });
 
       window.alert("Dislike!");

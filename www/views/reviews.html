@@ -9,7 +9,7 @@
       </a>
     </h4>
     <br>
-    <ion-list class="item low-pad-item item-text-wrap" ng-repeat="review in reviews | filter:searchBox">
+    <ion-list class="item low-pad-item item-text-wrap" ng-repeat="review in reviews | filter:searchBox | orderBy:'dateCreated'">
       <div class="flex-container row wrap">
         <h2 class="col col-75 title">{{review.title}}
           <p class="comment">
@@ -18,7 +18,7 @@
         </h2>
 
 <!-- used to be 40 fyi  -->
-        <h3 class="col col-25">Rating: {{review.rating}}<br>
+        <h3 class="col col-40">Rating: {{review.rating}}<br>
           <span style="color:#2ecc71" ng-repeat="number in [1,2,3,4,5]">
 
             <span ng-show="needsFullStar(number, {{review.rating}})"><i class="ion-ios-star"></i></span>
@@ -30,7 +30,7 @@
       <div class="flex-container row wrap">
         <i style="color:#2ecc71"class="ion-ios-person"> </i>
         <h3 class="col col-75">{{review.author}}</h3>
-        <h4 class="col col-25">{{review.timeCreated}}<br>{{review.dateCreated}}</h4>
+        <h4 class="col col-30">{{review.timeCreated}}<br>{{review.dateCreated}}</h4>
       </div>
     </ion-list>
   </ion-content>

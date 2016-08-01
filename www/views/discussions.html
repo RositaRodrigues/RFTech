@@ -10,7 +10,7 @@
     </h4>
     <br>
 
-    <ion-list class="item low-pad-item item-icon-right" ng-repeat="discussion in discussions">
+    <ion-list class="item low-pad-item item-icon-right" ng-repeat="discussion in discussions |  orderBy:'dateCreated'">
       <a href="#/app/course={{courseCode}}&title={{courseTitle}}&year={{academicYear}}/discussion={{discussion.ID}}">
 
         <div class="flex-container row wrap">
@@ -19,13 +19,13 @@
               {{discussion.description}}
             </p>
           </h2>
-          <h3 class="col col-20">Posts: {{discussion.posts}}</h3>
+          <h3 class="col col-40">Posts: {{discussion.posts}}</h3>
         </div>
 
         <div class="flex-container row wrap">
            <i style="color:#2ecc71"class="ion-ios-person"> </i>
-          <h3 class="col col-80">{{discussion.author}}</h3>
-          <h4 class="col col-20">{{discussion.timeCreated}}<br>{{discussion.dateCreated}}</h4>
+          <h3 class="col col-60">{{discussion.author}}</h3>
+          <h4 style="margin-left:17%"class="col col-40 ">{{discussion.timeCreated}}<br>{{discussion.dateCreated}}</h4>
         </div>
 
       </a>

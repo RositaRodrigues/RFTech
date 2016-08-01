@@ -286,6 +286,27 @@ h1 {
       /*background-color: rgba(0, 191, 255,0.5);*/
 }
 
+
+/*genreal courses styling*/
+
+.course-code{
+ font-family:roboto;
+ font-weight:900;
+ color:grey;
+}
+
+.course-title{
+ font-family:roboto;
+ font-weight:300;
+ color:grey
+}
+
+
+.course-year{
+ font-family:roboto;
+ font-weight:300;
+ color:grey
+}
 /* Utilities
 ==================================*/
 
@@ -351,6 +372,8 @@ h2.col.col-80.ng-binding {
   background-color:transparent;
   border-color:transparent;
 }
+
+
 
 /*
 form {

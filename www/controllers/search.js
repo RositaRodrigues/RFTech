@@ -13,8 +13,8 @@ angular.module('starter')
         course.ID = childSnapshot.key;
         firebase.database().ref(currentUser.university+'/mycourses/'+currentUser.uid+'/'+course.ID).once('value').then(function(snapshot) {
           course.isMyCourse = snapshot.val();
-          console.log(course.ID);
-          console.log(course.isMyCourse);
+          // console.log(course.ID);
+          // console.log(course.isMyCourse);
         });
         $scope.courses.push(course);
       });

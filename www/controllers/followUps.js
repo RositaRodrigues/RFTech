@@ -8,13 +8,14 @@ angular.module('starter')
     // Retrieve discussion and follow ups
     firebase.database().ref($rootScope.currentUser.university+'/discussions/'+$scope.courseCode+'/'+discussionID).once('value').then(function(snapshot) {
       $scope.discussion = snapshot.val();
-      console.log($scope.discussion);
     });
 
     $scope.followUps = [];
     firebase.database().ref($rootScope.currentUser.university+'/followUps/'+$scope.courseCode+'/'+discussionID).once('value').then(function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
-        $scope.followUps.push(childSnapshot.val());
+        var followUp = childSnapshot.val();
+        followUp.ID = childSnapshot.key;
+        $scope.followUps.push(followUp);
       });
     });
 
@@ -50,11 +51,23 @@ angular.module('starter')
       firebase.database().ref($rootScope.currentUser.university+'/discussions/'+$scope.courseCode+'/'+discussionID+'/').update({posts: newPosts});
     }
 
-    $scope.thumbsUp = function() {
+    $scope.thumbsUp = function(followUp) {
+      firebase.database().ref($rootScope.currentUser.university+'/followUps/'+$scope.courseCode+'/'+discussionID+'/'+followUp.ID).once('value').then(function(snapshot) {
+        var newVote = snapshot.val().upVotes + 1;
+        firebase.database().ref($rootScope.currentUser.university+'/followUps/'+$scope.courseCode+'/'+discussionID+'/'+followUp.ID+'/').update({upVotes: newVote});
+        followUp.upVotes++;
+      });
+
       window.alert("Like!");
     };
 
-    $scope.thumbsDown = function() {
+    $scope.thumbsDown = function(followUp) {
+      firebase.database().ref($rootScope.currentUser.university+'/followUps/'+$scope.courseCode+'/'+discussionID+'/'+followUp.ID).once('value').then(function(snapshot) {
+      var newVote = snapshot.val().downVotes + 1;
+      firebase.database().ref($rootScope.currentUser.university+'/followUps/'+$scope.courseCode+'/'+discussionID+'/'+followUp.ID+'/').update({downVotes: newVote});
+      followUp.downVotes++;
+    });
+
       window.alert("Dislike!");
     };
   });

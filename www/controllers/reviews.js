@@ -11,15 +11,6 @@ angular.module('starter')
       });
     });
 
-    $scope.refresh = function() {
-      $scope.reviews = [];
-      firebase.database().ref($rootScope.currentUser.university+'/reviews/'+$scope.courseCode).once('value').then(function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
-          $scope.reviews.push(childSnapshot.val());
-        });
-      });
-    }
-
     $scope.needsFullStar = function(number, rating) {
       return number <= rating;
     }

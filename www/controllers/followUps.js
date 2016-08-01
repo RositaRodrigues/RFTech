@@ -8,6 +8,7 @@ angular.module('starter')
     // Retrieve discussion and follow ups
     firebase.database().ref($rootScope.currentUser.university+'/discussions/'+$scope.courseCode+'/'+discussionID).once('value').then(function(snapshot) {
       $scope.discussion = snapshot.val();
+      console.log($scope.discussion);
     });
 
     $scope.followUps = [];
@@ -16,8 +17,6 @@ angular.module('starter')
         $scope.followUps.push(childSnapshot.val());
       });
     });
-
-
 
     // Post follow up
     $scope.input = {}
@@ -41,8 +40,13 @@ angular.module('starter')
       console.log(newFollowUp);
 
       firebase.database().ref(user.university+'/followUps/'+$scope.courseCode+'/'+discussionID).push(newFollowUp);
+      $scope.followUps.push(newFollowUp);
+
+      $scope.discussion.posts++;
+      var newPosts = $scope.discussion.posts;
+      firebase.database().ref($rootScope.currentUser.university+'/discussions/'+$scope.courseCode+'/'+discussionID+'/').update({posts: newPosts});
     }
-    
+
     $scope.thumbsUp = function() {
       window.alert("Like!");
     };

@@ -18,6 +18,10 @@ angular.module('starter')
 
     $scope.remove = function(course) {
       firebase.database().ref(currentUser.university+'/mycourses/'+currentUser.uid+'/'+course.ID).set(null);
+      var index = $scope.courses.indexOf(course);
+      if (index > -1) {
+        $scope.courses.splice(index, 1);
+      }
       window.alert("Removed!");
     }
   });

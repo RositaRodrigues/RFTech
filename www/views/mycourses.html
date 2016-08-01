@@ -13,22 +13,20 @@
   <div class="table-row wrapper header">
     <div class="wrapper text-4">
     <div class="wrapper text-2">
-
         <div align="left" style="font-family:roboto;font-weight:600;color:grey" class="pushleft text"> Course Details</div>
-
     </div>
     <hr>
 
     <div class="item low-pad-item item-icon-right" ng-repeat="course in courses | filter:searchBox">
+      <div class="text-right"><button class="button button-icon element2" ng-click="remove(course)"><i style="color:#2ecc71" class="ion-ios-heart"></i></button></div>
     <a href="#/app/course={{course.code}}&title={{course.title}}&year={{course.year}}/coursemenu">
-      <div class="text-right"><button class="button button-icon element2" ng-click="remove(course)"><i style="color:#2ecc71"class="ion-ios-heart"></i></button></div>
-      <div class="table-row wrapper">
-      <div class="wrapper text-4">
-      <div class="wrapper text-2">
-      <div align="left" style="font-family:roboto;font-weight:900;color:grey"class="element1" >{{course.code}}</div>
-      <div class="wrapper text-2">
-      <div align="left" style="font-family:roboto;font-weight:300;color:grey"class="element1">{{course.title}}</div>
-      <div align="left" style="font-family:roboto;font-weight:300;color:grey"class="element1">{{course.year}}</div>
-
+      <div class="table-row wrapper"></div>
+      <div class="wrapper text-4"></div>
+      <div class="wrapper text-2"></div>
+      <div align="left" style="font-family:roboto;font-weight:900;color:grey" class="element1" >{{course.code}}</div>
+      <div class="wrapper text-2"></div>
+      <div align="left" style="font-family:roboto;font-weight:300;color:grey" class="element1">{{course.title}}</div>
+      <div align="left" style="font-family:roboto;font-weight:300;color:grey" class="element1">{{course.year}}</div>
+    </a>
   </ion-content>
 </ion-view>
